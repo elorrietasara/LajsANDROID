@@ -8,8 +8,13 @@
         android:icon="@drawable/map"
         android:title="Item"
         app:showAsAction="always" />
-    <item android:title="FILTROS" />
     <item
+        android:id="@+id/filtros"
+        android:icon="@drawable/filtrar"
+        android:title="FILTROS"
+        app:showAsAction="always" />
+    <item
+        android:id="@+id/user"
         android:icon="@drawable/user"
         android:title="Item"
         app:showAsAction="always" />

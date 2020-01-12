@@ -16,6 +16,7 @@ import android.location.LocationManager;
 import android.os.Bundle;
 import android.os.Looper;
 import android.provider.Settings;
+import android.view.Menu;
 import android.widget.TextView;
 import android.widget.Toast;
 import com.google.android.gms.location.FusedLocationProviderClient;
@@ -28,16 +29,25 @@ import com.google.android.gms.maps.GoogleMap;
 import com.google.android.gms.maps.OnMapReadyCallback;
 import com.google.android.gms.maps.SupportMapFragment;
 import com.google.android.gms.maps.model.BitmapDescriptorFactory;
+import com.google.android.gms.maps.model.Circle;
+import com.google.android.gms.maps.model.CircleOptions;
 import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.MarkerOptions;
+import com.google.android.gms.maps.model.VisibleRegion;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
+import com.google.maps.android.SphericalUtil;
 
-public class MapsActivity extends FragmentActivity implements OnMapReadyCallback {
+import org.json.JSONArray;
+import org.json.JSONException;
+
+import java.io.IOException;
+import java.io.InputStream;
+import java.util.List;
+
+public class MapsActivity extends FragmentActivity implements OnMapReadyCallback  {
     private LocationManager locationManager;
-
     private GoogleMap mMap;
-
     int PERMISSION_ID = 44;
     double lon;
     double lat;
@@ -78,7 +88,16 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
 
                                     LatLng sydney = new LatLng(lat, lon);
                                     mMap.addMarker(new MarkerOptions().position(sydney).title("My Ubicación").icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_GREEN)));
-                                    mMap.animateCamera(CameraUpdateFactory.newLatLngZoom(sydney, 11.0f));
+                                    mMap.animateCamera(CameraUpdateFactory.newLatLngZoom(sydney, 15.0f));
+                                   /* Circle circle = mMap.addCircle(new CircleOptions()
+                                            .center(new LatLng(lat, lon))
+                                            .radius(100)
+                                            .strokeColor(Color.RED)
+                                            .fillColor(Color.BLUE));*/
+
+
+
+
                                 }
                             }
                         }
@@ -91,6 +110,15 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
         } else {
             requestPermissions();
         }
+    }
+    public int getZoomLevel(Circle circle) {
+        int zoomLevel = 1;
+        if (circle != null){
+            double radius = circle.getRadius();
+            double scale = radius / 500;
+            zoomLevel =(int) (16 - Math.log(scale) / Math.log(2));
+        }
+        return zoomLevel;
     }
     @SuppressLint("MissingPermission")
     private void requestNewLocationData(){
@@ -165,18 +193,49 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
 
     @Override
     public void onMapReady(GoogleMap googleMap) {
-
-
-
         mMap = googleMap;
-
-
+        Double lati = null;
+        Double longi=null;
         // Add a marker in Sydney and move the camera
-        LatLng sydney = new LatLng(lat, lon);
-        mMap.addMarker(new MarkerOptions().position(sydney).title("Marker in Sydney"));
+        //LEER JASON
+        try {
+            JSONArray jArray = new JSONArray(readJSONFromAsset());
+            for (int i = 0; i < jArray.length(); ++i) {
+                String name = jArray.getJSONObject(i).getString("nombre");// name of the country
+                String tele = jArray.getJSONObject(i).getString("telefono");// name of the country
+                 lati=Double.parseDouble(jArray.getJSONObject(i).getString("latitud"));
+                 longi=Double.parseDouble(jArray.getJSONObject(i).getString("longitud"));
+                LatLng sydney = new LatLng(lati, longi);
 
-        mMap.moveCamera(CameraUpdateFactory.newLatLng(sydney));
+
+                mMap.addMarker(new MarkerOptions().position(sydney).title(name));
+                mMap.setMapType(mMap.MAP_TYPE_NORMAL);
+
+                mMap.moveCamera(CameraUpdateFactory.newLatLng(sydney));
+
+            }
+        } catch (JSONException e) {
+            e.printStackTrace();
+        }
+
 
 
     }
+    public String readJSONFromAsset() {
+        String json = null;
+        String jason = "alojt.json";
+        try {
+            InputStream is = getAssets().open(jason);
+            int size = is.available();
+            byte[] buffer = new byte[size];
+            is.read(buffer);
+            is.close();
+            json = new String(buffer, "UTF-8");
+        } catch (IOException ex) {
+            ex.printStackTrace();
+            return null;
+        }
+        return json;
+    }
+
 }

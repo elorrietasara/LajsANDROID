@@ -1,14 +1,23 @@
 package com.example.reservas;
 
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.DividerItemDecoration;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.Button;
+import android.widget.EditText;
+import android.widget.Spinner;
+import android.widget.Toast;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -16,13 +25,19 @@ import org.json.JSONException;
 import java.io.IOException;
 import java.io.InputStream;
 import java.util.ArrayList;
+import java.util.Calendar;
 import java.util.List;
+
+import jp.wasabeef.recyclerview.animators.FadeInDownAnimator;
+import jp.wasabeef.recyclerview.animators.SlideInUpAnimator;
 
 public class MainActivity extends AppCompatActivity {
     RecyclerView recyclerView;
     RecyclerView.LayoutManager layoutManager;
     private RecyclerView.Adapter mAdapter;
     List<Alojamieno> mDataset;
+    List<Alojamieno> aux;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -33,32 +48,40 @@ public class MainActivity extends AppCompatActivity {
         // use this setting to improve performance if you know that changes
         // in content do not change the layout size of the RecyclerView
         recyclerView.setHasFixedSize(true);
+        recyclerView.setItemAnimator(new FadeInDownAnimator());
+        recyclerView.addItemDecoration(new DividerItemDecoration(this, LinearLayoutManager.VERTICAL));
 
         // use a linear layout manager
         layoutManager = new LinearLayoutManager(this);
+
         recyclerView.setLayoutManager(layoutManager);
         mDataset = new ArrayList<Alojamieno>();
-        //LEER JASON
         try {
             JSONArray jArray = new JSONArray(readJSONFromAsset());
             for (int i = 0; i < jArray.length(); ++i) {
                 String name = jArray.getJSONObject(i).getString("nombre");// name of the country
                 String telf = jArray.getJSONObject(i).getString("telefono");// name of the country
                 String web = jArray.getJSONObject(i).getString("web");
-                Double lat=Double.parseDouble(jArray.getJSONObject(i).getString("latitud"));
-                Double lon=Double.parseDouble(jArray.getJSONObject(i).getString("longitud"));
-                Alojamieno alojamiento= new Alojamieno(name,telf,web, lat ,lon);
+                String descrip = jArray.getJSONObject(i).getString("descripcion");
+                String localidad = jArray.getJSONObject(i).getString("localidad");
+                Double lat = Double.parseDouble(jArray.getJSONObject(i).getString("latitud"));
+                Double lon = Double.parseDouble(jArray.getJSONObject(i).getString("longitud"));
+                Alojamieno alojamiento = new Alojamieno(name, telf, web, lat, lon, descrip, localidad);
                 mDataset.add(alojamiento);
             }
         } catch (JSONException e) {
             e.printStackTrace();
         }
-
-    // specify an adapter (see also next example)
-
         mAdapter = new MyAdapter(mDataset);
+        mAdapter.notifyDataSetChanged();
         recyclerView.setAdapter(mAdapter);
     }
+
+
+
+
+
+
     public String readJSONFromAsset() {
         String json = null;
         String jason = "alojt.json";
@@ -76,6 +99,8 @@ public class MainActivity extends AppCompatActivity {
         return json;
     }
 
+
+
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         MenuInflater inflater = getMenuInflater();
@@ -85,14 +110,114 @@ public class MainActivity extends AppCompatActivity {
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
+        Intent intent;
         switch (item.getItemId()) {
             case R.id.mapa:
-
-                Intent intent = new Intent(this, MapsActivity.class);
+                intent = new Intent(this, MapsActivity.class);
                 startActivity(intent);
                 break;
+            case R.id.filtros:
+                LayoutInflater layoutinflater = LayoutInflater.from(this);
+                final View promptUserView = layoutinflater.inflate(R.layout.activity_filter, null);
+
+                final AlertDialog.Builder alertDialogBuilder = new AlertDialog.Builder(this);
+
+                Button boton = (Button) promptUserView.findViewById(R.id.button);
+                alertDialogBuilder.setView(promptUserView);
+                alertDialogBuilder.setTitle("Filtros");
+                final AlertDialog alertDialog = alertDialogBuilder.create();
+                alertDialog.setCancelable(false);
+                alertDialog.show();
+
+                boton.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View view) {
+                        Spinner provincias = (Spinner) promptUserView.findViewById(R.id.spinner);
+                         String provincia = provincias.getSelectedItem().toString();
+
+                        mDataset.clear();
+                        try {
+                            aux = new ArrayList<Alojamieno>();
+                            JSONArray jArray = new JSONArray(readJSONFromAsset());
+                            for (int i = 0; i < jArray.length(); ++i) {
+                                String name = jArray.getJSONObject(i).getString("nombre");// name of the country
+                                String telf = jArray.getJSONObject(i).getString("telefono");// name of the country
+                                String web = jArray.getJSONObject(i).getString("web");
+                                String descrip = jArray.getJSONObject(i).getString("descripcion");
+                                String localidad = jArray.getJSONObject(i).getString("localidad");
+                                Double lat = Double.parseDouble(jArray.getJSONObject(i).getString("latitud"));
+                                Double lon = Double.parseDouble(jArray.getJSONObject(i).getString("longitud"));
+                                Alojamieno alojamiento = new Alojamieno(name, telf, web, lat, lon, descrip, localidad);
+                                aux.add(alojamiento);
+                            }
+                        } catch (JSONException e) {
+                            e.printStackTrace();
+                        }
+
+                        for (int i = 0; i < aux.size(); i++) {
+                            String loc= aux.get(i).getLocalidad().toString();
+                            if(provincia.equals("Todos")){
+                                mDataset.add(aux.get(i));
+                            }
+                            else if (loc.replace(" ","").contains(provincia.replace(" ",""))) {
+                                mDataset.add(aux.get(i));
+
+                            }
+
+
+                        }
+
+                        mAdapter.notifyDataSetChanged();
+                        alertDialog.dismiss();
+
+
+
+
+                    }
+                });
+
+
+                break;
+            case R.id.user:
+                LayoutInflater layoutinflater2 = LayoutInflater.from(this);
+                final View promptUserView2 = layoutinflater2.inflate(R.layout.login, null);
+
+                final AlertDialog.Builder alertDialogBuilder2 = new AlertDialog.Builder(this);
+
+                alertDialogBuilder2.setView(promptUserView2);
+                alertDialogBuilder2.setTitle("Login");
+                final AlertDialog alertDialog2 = alertDialogBuilder2.create();
+                alertDialog2.setCancelable(false);
+                alertDialog2.show();
+                Button boton2 = (Button) promptUserView2.findViewById(R.id.button3);
+                final EditText usu = (EditText) promptUserView2.findViewById(R.id.editText);
+                final EditText contra = (EditText) promptUserView2.findViewById(R.id.editText2);
+                boton2.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View view) {
+                        if (usu.getText().toString().equals("") && contra.getText().toString().equals("")) {
+                            final AlertDialog.Builder builder = new AlertDialog.Builder(promptUserView2.getContext());
+                            builder.setTitle("ERROR");
+                            builder.setMessage("¡Introduzca los datos!");
+                            final AlertDialog ad = builder.create();
+                            ad.show();
+
+                        } else {
+                            alertDialog2.dismiss();
+                        }
+
+                    }
+                });
+                break;
+
+
         }
         return super.onOptionsItemSelected(item);
     }
 
+//LEER DE JSON
+
+
 }
+
+

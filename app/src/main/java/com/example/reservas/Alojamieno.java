@@ -8,15 +8,35 @@ public class Alojamieno {
     Double lat;
     Double lon;
 
-    public Alojamieno(String nombre, String telefono,String web, Double lat, Double lon) {
+    public String getLocalidad() {
+        return localidad;
+    }
+
+    public void setLocalidad(String localidad) {
+        this.localidad = localidad;
+    }
+
+    String localidad;
+    String descripcion;
+
+    public Alojamieno(String nombre, String telefono,String web, Double lat, Double lon,String descripcion,String localidad) {
         this.nombre = nombre;
         this.telefono = telefono;
         this.web = web;
         this.lat=lat;
         this.lon=lon;
+        this.descripcion=descripcion;
+        this.localidad=localidad;
 
     }
 
+    public String getDescripcion() {
+        return descripcion;
+    }
+
+    public void setDescripcion(String descripcion) {
+        this.descripcion = descripcion;
+    }
 
     public String getNombre() {
         return nombre;

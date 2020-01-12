@@ -11,6 +11,13 @@ anim abc_slide_out_bottom
 anim abc_slide_out_top
 anim abc_tooltip_enter
 anim abc_tooltip_exit
+anim error_frame_in
+anim error_x_in
+anim modal_in
+anim modal_out
+anim success_bow_roate
+anim success_mask_layout
+array spinner
 attr actionBarDivider
 attr actionBarItemBackground
 attr actionBarPopupTheme
@@ -160,6 +167,7 @@ attr fontProviderQuery
 attr fontStyle
 attr fontVariationSettings
 attr fontWeight
+attr fromDeg
 attr gapBetweenBars
 attr goIcon
 attr height
@@ -257,6 +265,16 @@ attr liteMode
 attr logo
 attr logoDescription
 attr mapType
+attr matProg_barColor
+attr matProg_barSpinCycleTime
+attr matProg_barWidth
+attr matProg_circleRadius
+attr matProg_fillRadius
+attr matProg_linearProgress
+attr matProg_progressIndeterminate
+attr matProg_rimColor
+attr matProg_rimWidth
+attr matProg_spinSpeed
 attr maxButtonHeight
 attr measureWithLargestChild
 attr multiChoiceItemLayout
@@ -272,6 +290,8 @@ attr paddingTopNoTitle
 attr panelBackground
 attr panelMenuListTheme
 attr panelMenuListWidth
+attr pivotX
+attr pivotY
 attr popupMenuStyle
 attr popupTheme
 attr popupWindowStyle
@@ -286,6 +306,7 @@ attr ratingBarStyleIndicator
 attr ratingBarStyleSmall
 attr recyclerViewStyle
 attr reverseLayout
+attr rollType
 attr scopeUris
 attr searchHintIcon
 attr searchIcon
@@ -314,6 +335,9 @@ attr subtitleTextAppearance
 attr subtitleTextColor
 attr subtitleTextStyle
 attr suggestionRowLayout
+attr sweet_alert_bg_drawable
+attr sweet_alert_content_text_color
+attr sweet_alert_title_text_color
 attr switchMinWidth
 attr switchPadding
 attr switchStyle
@@ -349,6 +373,7 @@ attr titleMargins
 attr titleTextAppearance
 attr titleTextColor
 attr titleTextStyle
+attr toDeg
 attr toolbarNavigationButtonStyle
 attr toolbarStyle
 attr tooltipForegroundColor
@@ -357,6 +382,21 @@ attr tooltipText
 attr track
 attr trackTint
 attr trackTintMode
+attr tsquare_dayBackground
+attr tsquare_dayTextColor
+attr tsquare_displayHeader
+attr tsquare_dividerColor
+attr tsquare_headerTextColor
+attr tsquare_state_current_month
+attr tsquare_state_deactivated
+attr tsquare_state_highlighted
+attr tsquare_state_range_first
+attr tsquare_state_range_last
+attr tsquare_state_range_middle
+attr tsquare_state_selectable
+attr tsquare_state_today
+attr tsquare_state_unavailable
+attr tsquare_titleTextColor
 attr ttcIndex
 attr uiCompass
 attr uiMapToolbar
@@ -413,6 +453,8 @@ color background_floating_material_dark
 color background_floating_material_light
 color background_material_dark
 color background_material_light
+color blue_btn_bg_color
+color blue_btn_bg_pressed_color
 color bright_foreground_disabled_material_dark
 color bright_foreground_disabled_material_light
 color bright_foreground_inverse_material_dark
@@ -421,9 +463,23 @@ color bright_foreground_material_dark
 color bright_foreground_material_light
 color button_material_dark
 color button_material_light
+color button_text_color
+color calendar_active_month_bg
+color calendar_bg
+color calendar_divider
+color calendar_highlighted_day_bg
+color calendar_inactive_month_bg
+color calendar_selected_day_bg
+color calendar_selected_range_bg
+color calendar_text_active
+color calendar_text_highlighted
+color calendar_text_inactive
+color calendar_text_selected
+color calendar_text_unselected
 color colorAccent
 color colorPrimary
 color colorPrimaryDark
+color color_red
 color common_google_signin_btn_text_dark
 color common_google_signin_btn_text_dark_default
 color common_google_signin_btn_text_dark_disabled
@@ -435,20 +491,49 @@ color common_google_signin_btn_text_light_disabled
 color common_google_signin_btn_text_light_focused
 color common_google_signin_btn_text_light_pressed
 color common_google_signin_btn_tint
+color custom_float_bg
+color dateTimeRangePickerHeaderTextColor
+color dateTimeRangePickerRangeTextColorActive
+color dateTimeRangePickerRangeTextColorInactive
+color dateTimeRangePickerStateDefault
+color dateTimeRangePickerStateNonSelectable
+color dateTimeRangePickerStateToday
+color dateTimeRangePickerTitleTextColor
 color dim_foreground_disabled_material_dark
 color dim_foreground_disabled_material_light
 color dim_foreground_material_dark
 color dim_foreground_material_light
 color error_color_material_dark
 color error_color_material_light
+color error_stroke_color
+color float_transparent
 color foreground_material_dark
 color foreground_material_light
+color gray_btn_bg_color
+color gray_btn_bg_pressed_color
 color highlighted_text_material_dark
 color highlighted_text_material_light
+color main_blue_color
+color main_blue_stroke_color
+color main_cyan_color
+color main_cyan_stroke_color
+color main_disabled_color
+color main_disabled_stroke_color
+color main_green_color
+color main_green_stroke_color
+color main_orange_color
+color main_orange_light_color
+color main_orange_light_stroke_color
+color main_orange_stroke_color
+color material_blue_grey_80
 color material_blue_grey_800
+color material_blue_grey_90
 color material_blue_grey_900
+color material_blue_grey_95
 color material_blue_grey_950
+color material_deep_teal_20
 color material_deep_teal_200
+color material_deep_teal_50
 color material_deep_teal_500
 color material_grey_100
 color material_grey_300
@@ -457,6 +542,8 @@ color material_grey_600
 color material_grey_800
 color material_grey_850
 color material_grey_900
+color message_color
+color message_color_dark
 color notification_action_color_filter
 color notification_icon_bg_color
 color primary_dark_material_dark
@@ -467,20 +554,31 @@ color primary_text_default_material_dark
 color primary_text_default_material_light
 color primary_text_disabled_material_dark
 color primary_text_disabled_material_light
+color red_btn_bg_color
+color red_btn_bg_pressed_color
 color ripple_material_dark
 color ripple_material_light
 color secondary_text_default_material_dark
 color secondary_text_default_material_light
 color secondary_text_disabled_material_dark
 color secondary_text_disabled_material_light
+color state_deactivated
+color success_stroke_color
+color sweet_dialog_bg_color
+color sweet_dialog_bg_color_dark
 color switch_thumb_disabled_material_dark
 color switch_thumb_disabled_material_light
 color switch_thumb_material_dark
 color switch_thumb_material_light
 color switch_thumb_normal_material_dark
 color switch_thumb_normal_material_light
+color text_color
+color title_color
+color title_color_dark
 color tooltip_background_dark
 color tooltip_background_light
+color trans_success_stroke_color
+color warning_stroke_color
 dimen abc_action_bar_content_inset_material
 dimen abc_action_bar_content_inset_with_nav
 dimen abc_action_bar_default_height_material
@@ -556,6 +654,15 @@ dimen abc_text_size_subhead_material
 dimen abc_text_size_subtitle_material_toolbar
 dimen abc_text_size_title_material
 dimen abc_text_size_title_material_toolbar
+dimen alert_width
+dimen buttons_stroke_width
+dimen calendar_day_headers_paddingbottom
+dimen calendar_month_title_bottommargin
+dimen calendar_month_topmargin
+dimen calendar_text_large
+dimen calendar_text_medium
+dimen calendar_text_small
+dimen common_circle_width
 dimen compat_button_inset_horizontal_material
 dimen compat_button_inset_vertical_material
 dimen compat_button_padding_horizontal_material
@@ -563,6 +670,7 @@ dimen compat_button_padding_vertical_material
 dimen compat_control_corner_material
 dimen compat_notification_large_icon_max_height
 dimen compat_notification_large_icon_max_width
+dimen custom_image_size
 dimen disabled_alpha_material_dark
 dimen disabled_alpha_material_light
 dimen fastscroll_default_thickness
@@ -593,6 +701,7 @@ dimen notification_small_icon_size_as_large
 dimen notification_subtext_size
 dimen notification_top_pad
 dimen notification_top_pad_large_text
+dimen progress_circle_radius
 dimen tooltip_corner_radius
 dimen tooltip_horizontal_padding
 dimen tooltip_margin
@@ -685,6 +794,12 @@ drawable abc_textfield_search_activated_mtrl_alpha
 drawable abc_textfield_search_default_mtrl_alpha
 drawable abc_textfield_search_material
 drawable abc_vector_test
+drawable amu_bubble_mask
+drawable amu_bubble_shadow
+drawable blue_button_background
+drawable calendar_bg_selector
+drawable calendar_text_selector
+drawable casa
 drawable common_full_open_on_phone
 drawable common_google_signin_btn_icon_dark
 drawable common_google_signin_btn_icon_dark_focused
@@ -704,12 +819,21 @@ drawable common_google_signin_btn_text_light
 drawable common_google_signin_btn_text_light_focused
 drawable common_google_signin_btn_text_light_normal
 drawable common_google_signin_btn_text_light_normal_background
+drawable day_text_color
+drawable dialog_background
+drawable dialog_background_dark
 drawable download
+drawable error_center_x
+drawable error_circle
+drawable filtrar
 drawable googleg_disabled_color_18
 drawable googleg_standard_color_18
+drawable gray_button_background
+drawable green_button_background
 drawable ic_launcher_background
 drawable ic_launcher_foreground
 drawable images
+drawable internet
 drawable map
 drawable notification_action_background
 drawable notification_bg
@@ -723,9 +847,22 @@ drawable notification_template_icon_bg
 drawable notification_template_icon_low_bg
 drawable notification_tile_bg
 drawable notify_panel_notification_icon_bg
+drawable red_button_background
+drawable state_deactivated
+drawable state_range_first
+drawable state_range_last
+drawable state_range_middle
+drawable state_range_middle_unavailable
+drawable state_selected
+drawable state_unavailable
+drawable success_bow
+drawable success_circle
 drawable tooltip_frame_dark
 drawable tooltip_frame_light
 drawable user
+drawable warning_circle
+drawable warning_sigh
+drawable web
 id ALT
 id CTRL
 id FUNCTION
@@ -790,13 +927,21 @@ id adjust_width
 id alertTitle
 id all
 id always
+id amu_text
 id async
 id auto
 id barrier
 id beginning
 id blocking
 id bottom
+id button
+id button2
+id button3
 id buttonPanel
+id buttons_container
+id calendar_grid
+id calendar_view
+id cancel_button
 id center
 id center_horizontal
 id center_vertical
@@ -806,25 +951,36 @@ id chronometer
 id clip_horizontal
 id clip_vertical
 id collapseActionView
+id confirm_button
 id content
 id contentPanel
+id content_text
 id custom
 id customPanel
+id custom_image
+id custom_view_container
 id dark
+id day_view_adapter_class
 id decor_content_parent
 id default_activity_button
 id dialog_button
 id dimensions
 id direct
 id disableHome
+id editText
+id editText2
 id edit_query
 id end
+id error_frame
+id error_x
 id expand_activities_button
 id expanded_menu
 id fill
 id fill_horizontal
 id fill_vertical
+id filtros
 id forever
+id glide_custom_view_target_tag
 id gone
 id group_divider
 id groups
@@ -836,6 +992,7 @@ id icon_group
 id icon_only
 id ifRoom
 id image
+id imageView
 id imageView2
 id imageView4
 id info
@@ -848,13 +1005,16 @@ id line1
 id line3
 id listMode
 id list_item
+id loading
 id map
-id mapView
 id mapa
+id mask_left
+id mask_right
 id message
 id middle
 id multiply
 id my_recyclerview
+id neutral_button
 id never
 id none
 id normal
@@ -865,7 +1025,9 @@ id packed
 id parent
 id parentPanel
 id percent
+id progressWheel
 id progress_circular
+id progress_dialog
 id progress_horizontal
 id radio
 id right
@@ -892,6 +1054,7 @@ id showCustom
 id showHome
 id showTitle
 id spacer
+id spinner
 id split_action_bar
 id spread
 id spread_inside
@@ -902,6 +1065,8 @@ id standard
 id start
 id submenuarrow
 id submit_area
+id success_frame
+id success_tick
 id tabMode
 id tag_accessibility_actions
 id tag_accessibility_clickable_spans
@@ -917,7 +1082,8 @@ id text2
 id textSpacerNoButtons
 id textSpacerNoTitle
 id textView
-id textView4
+id textView2
+id textView3
 id textView5
 id textView8
 id textView9
@@ -925,15 +1091,23 @@ id time
 id title
 id titleDividerNoCustom
 id title_template
+id title_text
 id top
 id topPanel
 id uniform
 id up
 id useLogo
+id user
+id warning_frame
+id webview
 id wide
+id window
 id withText
 id wrap
 id wrap_content
+id x
+id y
+id z
 integer abc_config_activityDefaultDur
 integer abc_config_activityShortDur
 integer cancel_button_image_alpha
@@ -968,23 +1142,54 @@ layout abc_search_dropdown_item_icons_2line
 layout abc_search_view
 layout abc_select_dialog_material
 layout abc_tooltip
+layout activity_filter
 layout activity_main
 layout activity_maps
 layout adapteraloj
+layout alert_dialog
+layout amu_info_window
+layout amu_text_bubble
+layout amu_webview
 layout custom_dialog
+layout login
+layout month
 layout notification_action
 layout notification_action_tombstone
 layout notification_template_custom_big
 layout notification_template_icon_group
 layout notification_template_part_chronometer
 layout notification_template_part_time
+layout reservar
 layout select_dialog_item_material
 layout select_dialog_multichoice_material
 layout select_dialog_singlechoice_material
 layout support_simple_spinner_dropdown_item
+layout week
 menu mimenu
+mipmap down
 mipmap ic_launcher
 mipmap ic_launcher_round
+raw amu_ballon_gx_prefix
+raw amu_basic_folder
+raw amu_basic_placemark
+raw amu_cdata
+raw amu_default_balloon
+raw amu_document_nest
+raw amu_draw_order_ground_overlay
+raw amu_extended_data
+raw amu_ground_overlay
+raw amu_ground_overlay_color
+raw amu_inline_style
+raw amu_multigeometry_placemarks
+raw amu_multiple_placemarks
+raw amu_nested_folders
+raw amu_nested_multigeometry
+raw amu_poly_style_boolean_alpha
+raw amu_poly_style_boolean_numeric
+raw amu_unknwown_folder
+raw amu_unsupported
+raw amu_visibility_ground_overlay
+string LOADING
 string abc_action_bar_home_description
 string abc_action_bar_up_description
 string abc_action_menu_overflow_description
@@ -1043,6 +1248,10 @@ string common_google_play_services_wear_update_text
 string common_open_on_phone
 string common_signin_button_text
 string common_signin_button_text_long
+string default_progressbar
+string dialog_cancel
+string dialog_default_title
+string dialog_ok
 string google_maps_key
 string search_menu_title
 string status_bar_notification_info_overflow
@@ -1208,6 +1417,10 @@ style Base_Widget_AppCompat_Spinner_Underlined
 style Base_Widget_AppCompat_TextView_SpinnerItem
 style Base_Widget_AppCompat_Toolbar
 style Base_Widget_AppCompat_Toolbar_Button_Navigation
+style CalendarCell
+style CalendarCell_CalendarDate
+style CalendarCell_DayHeader
+style CalendarTitle
 style Platform_AppCompat
 style Platform_AppCompat_Light
 style Platform_ThemeOverlay_AppCompat
@@ -1394,6 +1607,12 @@ style Widget_AppCompat_Toolbar_Button_Navigation
 style Widget_Compat_NotificationActionContainer
 style Widget_Compat_NotificationActionText
 style Widget_Support_CoordinatorLayout
+style alert_dialog_dark
+style alert_dialog_light
+style amu_Bubble_TextAppearance_Dark
+style amu_Bubble_TextAppearance_Light
+style amu_ClusterIcon_TextAppearance
+style dialog_blue_button
 styleable ActionBar background backgroundSplit backgroundStacked contentInsetEnd contentInsetEndWithActions contentInsetLeft contentInsetRight contentInsetStart contentInsetStartWithNavigation customNavigationLayout displayOptions divider elevation height hideOnContentScroll homeAsUpIndicator homeLayout icon indeterminateProgressStyle itemPadding logo navigationMode popupTheme progressBarPadding progressBarStyle subtitle subtitleTextStyle title titleTextStyle
 styleable ActionBarLayout android_layout_gravity
 styleable ActionMenuItemView android_minWidth
@@ -1410,6 +1629,7 @@ styleable AppCompatTextHelper android_textAppearance android_drawableTop android
 styleable AppCompatTextView android_textAppearance autoSizeMaxTextSize autoSizeMinTextSize autoSizePresetSizes autoSizeStepGranularity autoSizeTextType firstBaselineToTopHeight fontFamily lastBaselineToBottomHeight lineHeight textAllCaps
 styleable AppCompatTheme android_windowIsFloating android_windowAnimationStyle actionBarDivider actionBarItemBackground actionBarPopupTheme actionBarSize actionBarSplitStyle actionBarStyle actionBarTabBarStyle actionBarTabStyle actionBarTabTextStyle actionBarTheme actionBarWidgetTheme actionButtonStyle actionDropDownStyle actionMenuTextAppearance actionMenuTextColor actionModeBackground actionModeCloseButtonStyle actionModeCloseDrawable actionModeCopyDrawable actionModeCutDrawable actionModeFindDrawable actionModePasteDrawable actionModePopupWindowStyle actionModeSelectAllDrawable actionModeShareDrawable actionModeSplitBackground actionModeStyle actionModeWebSearchDrawable actionOverflowButtonStyle actionOverflowMenuStyle activityChooserViewStyle alertDialogButtonGroupStyle alertDialogCenterButtons alertDialogStyle alertDialogTheme autoCompleteTextViewStyle borderlessButtonStyle buttonBarButtonStyle buttonBarNegativeButtonStyle buttonBarNeutralButtonStyle buttonBarPositiveButtonStyle buttonBarStyle buttonStyle buttonStyleSmall checkboxStyle checkedTextViewStyle colorAccent colorBackgroundFloating colorButtonNormal colorControlActivated colorControlHighlight colorControlNormal colorError colorPrimary colorPrimaryDark colorSwitchThumbNormal controlBackground dialogCornerRadius dialogPreferredPadding dialogTheme dividerHorizontal dividerVertical dropDownListViewStyle dropdownListPreferredItemHeight editTextBackground editTextColor editTextStyle homeAsUpIndicator imageButtonStyle listChoiceBackgroundIndicator listDividerAlertDialog listMenuViewStyle listPopupWindowStyle listPreferredItemHeight listPreferredItemHeightLarge listPreferredItemHeightSmall listPreferredItemPaddingLeft listPreferredItemPaddingRight panelBackground panelMenuListTheme panelMenuListWidth popupMenuStyle popupWindowStyle radioButtonStyle ratingBarStyle ratingBarStyleIndicator ratingBarStyleSmall searchViewStyle seekBarStyle selectableItemBackground selectableItemBackgroundBorderless spinnerDropDownItemStyle spinnerStyle switchStyle textAppearanceLargePopupMenu textAppearanceListItem textAppearanceListItemSecondary textAppearanceListItemSmall textAppearancePopupMenuHeader textAppearanceSearchResultSubtitle textAppearanceSearchResultTitle textAppearanceSmallPopupMenu textColorAlertDialogListItem textColorSearchUrl toolbarNavigationButtonStyle toolbarStyle tooltipForegroundColor tooltipFrameBackground viewInflaterClass windowActionBar windowActionBarOverlay windowActionModeOverlay windowFixedHeightMajor windowFixedHeightMinor windowFixedWidthMajor windowFixedWidthMinor windowMinWidthMajor windowMinWidthMinor windowNoTitle
 styleable ButtonBarLayout allowStacking
+styleable CalendarPickerView android_background tsquare_dayBackground tsquare_dayTextColor tsquare_displayHeader tsquare_dividerColor tsquare_headerTextColor tsquare_titleTextColor
 styleable ColorStateListItem android_color android_alpha alpha
 styleable CompoundButton android_button buttonTint buttonTintMode
 styleable ConstraintLayout_Layout android_orientation android_maxWidth android_maxHeight android_minWidth android_minHeight barrierAllowsGoneWidgets barrierDirection chainUseRtl constraintSet constraint_referenced_ids layout_constrainedHeight layout_constrainedWidth layout_constraintBaseline_creator layout_constraintBaseline_toBaselineOf layout_constraintBottom_creator layout_constraintBottom_toBottomOf layout_constraintBottom_toTopOf layout_constraintCircle layout_constraintCircleAngle layout_constraintCircleRadius layout_constraintDimensionRatio layout_constraintEnd_toEndOf layout_constraintEnd_toStartOf layout_constraintGuide_begin layout_constraintGuide_end layout_constraintGuide_percent layout_constraintHeight_default layout_constraintHeight_max layout_constraintHeight_min layout_constraintHeight_percent layout_constraintHorizontal_bias layout_constraintHorizontal_chainStyle layout_constraintHorizontal_weight layout_constraintLeft_creator layout_constraintLeft_toLeftOf layout_constraintLeft_toRightOf layout_constraintRight_creator layout_constraintRight_toLeftOf layout_constraintRight_toRightOf layout_constraintStart_toEndOf layout_constraintStart_toStartOf layout_constraintTop_creator layout_constraintTop_toBottomOf layout_constraintTop_toTopOf layout_constraintVertical_bias layout_constraintVertical_chainStyle layout_constraintVertical_weight layout_constraintWidth_default layout_constraintWidth_max layout_constraintWidth_min layout_constraintWidth_percent layout_editor_absoluteX layout_editor_absoluteY layout_goneMarginBottom layout_goneMarginEnd layout_goneMarginLeft layout_goneMarginRight layout_goneMarginStart layout_goneMarginTop layout_optimizationLevel
@@ -1433,8 +1653,10 @@ styleable MenuItem android_icon android_enabled android_id android_checked andro
 styleable MenuView android_windowAnimationStyle android_itemTextAppearance android_horizontalDivider android_verticalDivider android_headerBackground android_itemBackground android_itemIconDisabledAlpha preserveIconSpacing subMenuArrow
 styleable PopupWindow android_popupBackground android_popupAnimationStyle overlapAnchor
 styleable PopupWindowBackgroundState state_above_anchor
+styleable ProgressWheel matProg_barColor matProg_barSpinCycleTime matProg_barWidth matProg_circleRadius matProg_fillRadius matProg_linearProgress matProg_progressIndeterminate matProg_rimColor matProg_rimWidth matProg_spinSpeed
 styleable RecycleListView paddingBottomNoButtons paddingTopNoTitle
 styleable RecyclerView android_orientation android_clipToPadding android_descendantFocusability fastScrollEnabled fastScrollHorizontalThumbDrawable fastScrollHorizontalTrackDrawable fastScrollVerticalThumbDrawable fastScrollVerticalTrackDrawable layoutManager reverseLayout spanCount stackFromEnd
+styleable Rotate3dAnimation fromDeg pivotX pivotY rollType toDeg
 styleable SearchView android_focusable android_maxWidth android_inputType android_imeOptions closeIcon commitIcon defaultQueryHint goIcon iconifiedByDefault layout queryBackground queryHint searchHintIcon searchIcon submitBackground suggestionRowLayout voiceIcon
 styleable SignInButton buttonSize colorScheme scopeUris
 styleable Spinner android_entries android_popupBackground android_prompt android_dropDownWidth popupTheme
@@ -1446,3 +1668,4 @@ styleable Toolbar android_gravity android_minHeight buttonGravity collapseConten
 styleable View android_theme android_focusable paddingEnd paddingStart theme
 styleable ViewBackgroundHelper android_background backgroundTint backgroundTintMode
 styleable ViewStubCompat android_id android_layout android_inflatedId
+styleable calendar_cell tsquare_state_current_month tsquare_state_deactivated tsquare_state_highlighted tsquare_state_range_first tsquare_state_range_last tsquare_state_range_middle tsquare_state_selectable tsquare_state_today tsquare_state_unavailable

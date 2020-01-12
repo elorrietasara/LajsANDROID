@@ -1,4 +1,20 @@
 <resources>
     <string name="app_name">Reservas</string>
     <string name="title_activity_maps">Map</string>
+    <string-array name="spinner">
+        <item>Todos</item>
+        <item>Montes y Valles vascos</item>
+        <item>Bilbao</item>
+        <item>Vitoria-Gasteiz</item>
+        <item>Costa Vasca</item>
+
+        <item>San Sebastián</item>
+        <item>Rioja Alavesa</item>
+
+
+        <item>Bilbao</item>
+        <item>Bilbao</item>
+
+
+    </string-array>
 </resources>
