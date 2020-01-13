@@ -223,7 +223,7 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
     }
     public String readJSONFromAsset() {
         String json = null;
-        String jason = "alojt.json";
+        String jason = "alojR.json";
         try {
             InputStream is = getAssets().open(jason);
             int size = is.available();

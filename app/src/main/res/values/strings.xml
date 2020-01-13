@@ -2,7 +2,7 @@
     <string name="app_name">Reservas</string>
     <string name="title_activity_maps">Map</string>
     <string-array name="spinner">
-        <item>Todos</item>
+        <item>Elegir...</item>
         <item>Montes y Valles vascos</item>
         <item>Bilbao</item>
         <item>Vitoria-Gasteiz</item>
@@ -12,8 +12,17 @@
         <item>Rioja Alavesa</item>
 
 
-        <item>Bilbao</item>
-        <item>Bilbao</item>
+
+
+
+    </string-array>
+    <string-array name="spinner2">
+        <item>Elegir...</item>
+        <item>Albergue</item>
+        <item>Agroturismos</item>
+        <item>Casas Rurales</item>
+        <item>Camping</item>
+
 
 
     </string-array>

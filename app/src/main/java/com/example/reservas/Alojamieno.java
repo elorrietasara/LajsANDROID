@@ -7,19 +7,21 @@ public class Alojamieno {
     String web;
     Double lat;
     Double lon;
-
-    public String getLocalidad() {
-        return localidad;
-    }
-
-    public void setLocalidad(String localidad) {
-        this.localidad = localidad;
-    }
-
+    String tipo;
     String localidad;
     String descripcion;
 
-    public Alojamieno(String nombre, String telefono,String web, Double lat, Double lon,String descripcion,String localidad) {
+    public Integer getCapacidad() {
+        return capacidad;
+    }
+
+    public void setCapacidad(Integer capacidad) {
+        this.capacidad = capacidad;
+    }
+
+    Integer capacidad;
+
+    public Alojamieno(String nombre, String telefono,String web, Double lat, Double lon,String descripcion,String localidad, String tipo, Integer capacidad) {
         this.nombre = nombre;
         this.telefono = telefono;
         this.web = web;
@@ -27,7 +29,25 @@ public class Alojamieno {
         this.lon=lon;
         this.descripcion=descripcion;
         this.localidad=localidad;
+        this.tipo=tipo;
+        this.capacidad=capacidad;
 
+    }
+    public String getTipo() {
+        return tipo;
+    }
+
+    public void setTipo(String tipo) {
+        this.tipo = tipo;
+    }
+
+
+
+    public String getLocalidad() {
+        return localidad;
+    }
+    public void setLocalidad(String localidad) {
+        this.localidad = localidad;
     }
 
     public String getDescripcion() {

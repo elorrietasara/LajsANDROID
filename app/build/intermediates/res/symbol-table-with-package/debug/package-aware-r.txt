@@ -18,6 +18,7 @@ anim modal_out
 anim success_bow_roate
 anim success_mask_layout
 array spinner
+array spinner2
 attr actionBarDivider
 attr actionBarItemBackground
 attr actionBarPopupTheme
@@ -942,6 +943,7 @@ id buttons_container
 id calendar_grid
 id calendar_view
 id cancel_button
+id capaz
 id center
 id center_horizontal
 id center_vertical
@@ -1048,6 +1050,7 @@ id search_mag_icon
 id search_plate
 id search_src_text
 id search_voice_btn
+id seekBar2
 id select_dialog_listview
 id shortcut
 id showCustom
@@ -1055,6 +1058,7 @@ id showHome
 id showTitle
 id spacer
 id spinner
+id spinner2
 id split_action_bar
 id spread
 id spread_inside
@@ -1084,7 +1088,9 @@ id textSpacerNoTitle
 id textView
 id textView2
 id textView3
+id textView4
 id textView5
+id textView6
 id textView8
 id textView9
 id time

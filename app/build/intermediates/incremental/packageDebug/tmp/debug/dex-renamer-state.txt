@@ -1,4 +1,4 @@
-#Sun Jan 12 13:31:31 CET 2020
-base.0=C\:\\RetoFinal\\LajsANDROID\\app\\build\\intermediates\\dex\\debug\\mergeDexDebug\\out\\classes.dex
+#Mon Jan 13 12:18:53 CET 2020
+base.0=C\:\\RETO2DAMAndroid\\LajsANDROID\\app\\build\\intermediates\\dex\\debug\\mergeDexDebug\\out\\classes.dex
 path.0=classes.dex
 renamed.0=classes.dex
