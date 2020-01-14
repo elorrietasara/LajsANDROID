@@ -836,6 +836,7 @@ drawable ic_launcher_foreground
 drawable images
 drawable internet
 drawable map
+drawable mapa
 drawable notification_action_background
 drawable notification_bg
 drawable notification_bg_low
@@ -868,6 +869,7 @@ id ALT
 id CTRL
 id FUNCTION
 id META
+id Resumen
 id SHIFT
 id SYM
 id accessibility_action_clickable_span
@@ -938,6 +940,7 @@ id bottom
 id button
 id button2
 id button3
+id button4
 id buttonPanel
 id buttons_container
 id calendar_grid
@@ -1010,6 +1013,7 @@ id list_item
 id loading
 id map
 id mapa
+id mapi
 id mask_left
 id mask_right
 id message
@@ -1151,6 +1155,8 @@ layout abc_tooltip
 layout activity_filter
 layout activity_main
 layout activity_maps
+layout activity_maps2
+layout activity_reserva
 layout adapteraloj
 layout alert_dialog
 layout amu_info_window
@@ -1262,6 +1268,7 @@ string google_maps_key
 string search_menu_title
 string status_bar_notification_info_overflow
 string title_activity_maps
+string title_activity_maps2
 style AlertDialog_AppCompat
 style AlertDialog_AppCompat_Light
 style Animation_AppCompat_Dialog

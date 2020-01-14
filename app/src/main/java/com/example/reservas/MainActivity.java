@@ -192,47 +192,64 @@ public class MainActivity extends AppCompatActivity {
 
                             if(provincia.equals("Elegir...") && tipo.equals("Elegir...") && Integer.parseInt(capacidad.getText().toString())==0 ){
                                 mDataset.add(aux.get(i));
-                            }
-                            if (loc.replace(" ","").contains(provincia.replace(" ",""))) {
+                            }else {
+
                                 mDataset.add(aux.get(i));
-                                if( !tipo.equals("Elegir...") &&  mDataset.size()!=0){
+                                if (!tipo.equals("Elegir...")  && !provincia.equals("Elegir...")&& Integer.parseInt(capacidad.getText().toString()) == 0) {
+                                    //mDataset.add(aux.get(i));
+                                    if (!loc.replace(" ", "").contains(provincia.replace(" ", ""))|| mDataset.size() != 0  && !mDataset.get(mDataset.size() - 1).getTipo().toString().equals(tipo) ) {
+                                        mDataset.remove(mDataset.size() - 1);
+                                    }
+                                  /*  if ( mDataset.size() != 0 && !mDataset.get(mDataset.size() - 1).getTipo().toString().equals(tipo) ) {
+                                        mDataset.remove(mDataset.size() - 1);
 
-                                    if (!mDataset.get(mDataset.size()-1).getTipo().toString().equals(tipo) ) {
-                                        mDataset.remove(mDataset.size()-1);
+                                    }*/
+                                    /*if (Integer.parseInt(aux.get(i).getCapacidad().toString()) > Integer.parseInt(capacidad.getText().toString()) && mDataset.size() != 0) {
+                                        mDataset.remove(mDataset.size() - 1);
+
+                                    }*/
+                                }
+                                else if (tipo.equals("Elegir...") && mDataset.size() != 0 && Integer.parseInt(capacidad.getText().toString()) != 0 && provincia.equals("Elegir...")) {
+                                    //mDataset.add(aux.get(i));
+                                    if (Integer.parseInt(aux.get(i).getCapacidad().toString()) > Integer.parseInt(capacidad.getText().toString())) {
+                                        mDataset.remove(mDataset.size() - 1);
 
                                     }
-                                    if (Integer.parseInt(aux.get(i).getCapacidad().toString()) > Integer.parseInt(capacidad.getText().toString())&&  mDataset.size()!=0  ){
-                                        mDataset.remove(mDataset.size()-1);
-
-                                    }
-                                }else if(tipo.equals("Elegir...") &&  mDataset.size()!=0 && Integer.parseInt(capacidad.getText().toString())!=0){
-                                    if (Integer.parseInt(aux.get(i).getCapacidad().toString()) > Integer.parseInt(capacidad.getText().toString()) ){
-                                        mDataset.remove(mDataset.size()-1);
-
-                                    }
-
-                                }else if(!tipo.equals("Elegir...") &&  mDataset.size()!=0 && Integer.parseInt(capacidad.getText().toString())==0){
-                                    if (!mDataset.get(mDataset.size()-1).getTipo().toString().equals(tipo) ) {
-                                        mDataset.remove(mDataset.size()-1);
-
-                                    }
-                                }else{
 
                                 }
+                                else if (!tipo.equals("Elegir...") && mDataset.size() != 0 && Integer.parseInt(capacidad.getText().toString()) == 0 && provincia.equals("Elegir...")) {
+                                    //mDataset.add(aux.get(i));
+                                    if (!mDataset.get(mDataset.size() - 1).getTipo().toString().equals(tipo)) {
+                                        mDataset.remove(mDataset.size() - 1);
 
-
+                                    }
+                                }
+                                else if (tipo.equals("Elegir...") && mDataset.size() != 0 && Integer.parseInt(capacidad.getText().toString()) == 0 && !provincia.equals("Elegir...")) {
+                                   // mDataset.add(aux.get(i));
+                                    if (!loc.replace(" ", "").contains(provincia.replace(" ", ""))) {
+                                        mDataset.remove(mDataset.size() - 1);
+                                    }
+                                }
+                                else if (!tipo.equals("Elegir...") && mDataset.size() != 0 && Integer.parseInt(capacidad.getText().toString()) != 0 && !provincia.equals("Elegir...")) {
+                                    // mDataset.add(aux.get(i));
+                                    if (!loc.replace(" ", "").contains(provincia.replace(" ", ""))|| !mDataset.get(mDataset.size() - 1).getTipo().toString().equals(tipo)|| Integer.parseInt(aux.get(i).getCapacidad().toString()) > Integer.parseInt(capacidad.getText().toString())) {
+                                        mDataset.remove(mDataset.size() - 1);
+                                    }
+                                }
+                                else if (!tipo.equals("Elegir...") && mDataset.size() != 0 && Integer.parseInt(capacidad.getText().toString()) != 0 && provincia.equals("Elegir...")) {
+                                    // mDataset.add(aux.get(i));
+                                    if (!mDataset.get(mDataset.size() - 1).getTipo().toString().equals(tipo)||Integer.parseInt(aux.get(i).getCapacidad().toString()) > Integer.parseInt(capacidad.getText().toString())) {
+                                        mDataset.remove(mDataset.size() - 1);
+                                    }
+                                }
+                                else if (tipo.equals("Elegir...") || mDataset.size() != 0 || Integer.parseInt(capacidad.getText().toString()) != 0 || !provincia.equals("Elegir...")) {
+                                    // mDataset.add(aux.get(i));
+                                    if (!loc.replace(" ", "").contains(provincia.replace(" ", ""))&& Integer.parseInt(aux.get(i).getCapacidad().toString()) > Integer.parseInt(capacidad.getText().toString())) {
+                                        mDataset.remove(mDataset.size() - 1);
+                                    }
+                                }
 
                             }
-                          /*  if (aux.get(i).getTipo().toString().equals(tipo)) {
-                                mDataset.add(aux.get(i));
-
-                            }
-                            if (Integer.parseInt(aux.get(i).getCapacidad().toString()) <= Integer.parseInt(capacidad.getText().toString())){
-                                mDataset.add(aux.get(i));
-
-                            }*/
-
-
 
                         }
 

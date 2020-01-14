@@ -20,6 +20,10 @@ public class Alojamieno {
     }
 
     Integer capacidad;
+    public Alojamieno() {
+
+
+    }
 
     public Alojamieno(String nombre, String telefono,String web, Double lat, Double lon,String descripcion,String localidad, String tipo, Integer capacidad) {
         this.nombre = nombre;

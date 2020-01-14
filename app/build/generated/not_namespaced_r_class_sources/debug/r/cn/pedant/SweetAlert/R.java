@@ -101,41 +101,41 @@ public final class R {
         public static final int error_circle = 0x7f070073;
         public static final int gray_button_background = 0x7f070077;
         public static final int green_button_background = 0x7f070078;
-        public static final int red_button_background = 0x7f07008a;
-        public static final int success_bow = 0x7f070092;
-        public static final int success_circle = 0x7f070093;
-        public static final int warning_circle = 0x7f070097;
-        public static final int warning_sigh = 0x7f070098;
+        public static final int red_button_background = 0x7f07008b;
+        public static final int success_bow = 0x7f070093;
+        public static final int success_circle = 0x7f070094;
+        public static final int warning_circle = 0x7f070098;
+        public static final int warning_sigh = 0x7f070099;
     }
     public static final class id {
         private id() {}
 
-        public static final int buttons_container = 0x7f08004b;
-        public static final int cancel_button = 0x7f08004e;
-        public static final int confirm_button = 0x7f080059;
-        public static final int content_text = 0x7f08005c;
-        public static final int custom_image = 0x7f08005f;
-        public static final int custom_view_container = 0x7f080060;
-        public static final int error_frame = 0x7f08006d;
-        public static final int error_x = 0x7f08006e;
-        public static final int loading = 0x7f08008f;
-        public static final int mask_left = 0x7f080092;
-        public static final int mask_right = 0x7f080093;
-        public static final int neutral_button = 0x7f080098;
-        public static final int progressWheel = 0x7f0800a3;
-        public static final int progress_dialog = 0x7f0800a5;
-        public static final int success_frame = 0x7f0800cd;
-        public static final int success_tick = 0x7f0800ce;
-        public static final int title_text = 0x7f0800e9;
-        public static final int warning_frame = 0x7f0800f0;
-        public static final int x = 0x7f0800f7;
-        public static final int y = 0x7f0800f8;
-        public static final int z = 0x7f0800f9;
+        public static final int buttons_container = 0x7f08004d;
+        public static final int cancel_button = 0x7f080050;
+        public static final int confirm_button = 0x7f08005b;
+        public static final int content_text = 0x7f08005e;
+        public static final int custom_image = 0x7f080061;
+        public static final int custom_view_container = 0x7f080062;
+        public static final int error_frame = 0x7f08006f;
+        public static final int error_x = 0x7f080070;
+        public static final int loading = 0x7f080091;
+        public static final int mask_left = 0x7f080095;
+        public static final int mask_right = 0x7f080096;
+        public static final int neutral_button = 0x7f08009b;
+        public static final int progressWheel = 0x7f0800a6;
+        public static final int progress_dialog = 0x7f0800a8;
+        public static final int success_frame = 0x7f0800d0;
+        public static final int success_tick = 0x7f0800d1;
+        public static final int title_text = 0x7f0800ec;
+        public static final int warning_frame = 0x7f0800f3;
+        public static final int x = 0x7f0800fa;
+        public static final int y = 0x7f0800fb;
+        public static final int z = 0x7f0800fc;
     }
     public static final class layout {
         private layout() {}
 
-        public static final int alert_dialog = 0x7f0a0020;
+        public static final int alert_dialog = 0x7f0a0022;
     }
     public static final class string {
         private string() {}

@@ -1,6 +1,7 @@
 package com.example.reservas;
 
 
+import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.graphics.Color;
@@ -9,6 +10,7 @@ import android.graphics.Typeface;
 import android.location.Location;
 import android.text.method.LinkMovementMethod;
 import android.text.util.Linkify;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -40,14 +42,16 @@ import java.util.List;
 
 import cn.pedant.SweetAlert.SweetAlertDialog;
 
+import static androidx.constraintlayout.widget.Constraints.TAG;
 
-public class MyAdapter extends RecyclerView.Adapter<MyAdapter.ViewHolder>  {
+
+public class MyAdapter extends RecyclerView.Adapter<MyAdapter.ViewHolder> {
 
     private List<Alojamieno> userModelList;
 
 
     GoogleMap map;
-    Double lat ;
+    Double lat;
     Double lon;
 
     public MyAdapter(List<Alojamieno> userModelList) {
@@ -64,19 +68,25 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.ViewHolder>  {
 
 
     @Override
-    public void onBindViewHolder(ViewHolder holder, int position) {
+    public void onBindViewHolder(final ViewHolder holder, final int position) {
 
-        String name = userModelList.get(position).getNombre();
+        final String name = userModelList.get(position).getNombre();
         String tel = userModelList.get(position).getTelefono();
         String webb = userModelList.get(position).getLocalidad();
         final String descripcion = userModelList.get(position).getDescripcion();
-         lat = userModelList.get(position).getLat();
-         lon = userModelList.get(position).getLon();
+        lat = userModelList.get(position).getLat();
+        lon = userModelList.get(position).getLon();
+        Alojamieno aloj= new Alojamieno();
+        aloj.setNombre(name);
+        aloj.setLat(lat);
+        aloj.setLon(lon);
+
+        userModelList.add(aloj);
 
 
         holder.name.setText(name);
         holder.telefono.setText(tel);
-        holder.web.setText(webb);
+        holder.web.setText(lat+" "+lon);
         holder.reservar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(final View view) {
@@ -90,8 +100,7 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.ViewHolder>  {
                 Calendar pastYear = Calendar.getInstance();
                 pastYear.add(Calendar.YEAR, 0);
                 Calendar nextYear = Calendar.getInstance();
-                nextYear.add(Calendar.DATE,265);
-
+                nextYear.add(Calendar.DATE, 265);
 
 
                 final CalendarPickerView calendar = (CalendarPickerView) promptUserView.findViewById(R.id.calendar_view);
@@ -103,17 +112,28 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.ViewHolder>  {
 
                 alertDialogBuilder.setTitle("Seleccione fechas");
 
-                alertDialogBuilder.setPositiveButton("Ok",new DialogInterface.OnClickListener() {
+                alertDialogBuilder.setPositiveButton("Ok", new DialogInterface.OnClickListener() {
                     public void onClick(DialogInterface dialog, int id) {
 
-                        Toast.makeText(view.getContext(),""+calendar.getSelectedDates(),Toast.LENGTH_LONG).show();
+                        Toast.makeText(view.getContext(), "" + calendar.getSelectedDates(), Toast.LENGTH_LONG).show();
                         // and display the username on main activity layout
 
                         new SweetAlertDialog(view.getContext(), SweetAlertDialog.SUCCESS_TYPE)
-                                .setTitleText("Reservado!")
-                                
+                                .setTitleText("Reservado!").setConfirmClickListener(new SweetAlertDialog.OnSweetClickListener() {
+                            @Override
+                            public void onClick(SweetAlertDialog sweetAlertDialog) {
+                                Intent intent = new Intent(view.getContext(), ReservaActivity.class);
+                                intent.putExtra("Nombre", userModelList.get(position).getNombre());
+                                intent.putExtra("FechaE",calendar.getSelectedDates().get(0).toString());
+                                intent.putExtra("FechaS",calendar.getSelectedDates().get(calendar.getSelectedDates().size()-1).toString() );
+
+                                view.getContext().startActivity(intent);
+                            }
+                        })
+
                                 .show();
-                       dialog.dismiss();
+                        dialog.dismiss();
+
                     }
                 });
 
@@ -123,7 +143,22 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.ViewHolder>  {
             }
         });
 
-     }
+        holder.verMapa.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Toast.makeText(view.getContext(),"latlon"+userModelList.get(position).getLat()+"  "+userModelList.get(position).getLon()+"  "+  holder.getLayoutPosition(),Toast.LENGTH_LONG).show();
+                Intent intent = new Intent(view.getContext(), MapsActivity2.class);
+                intent.putExtra("LATITUDE", userModelList.get(position).getLat());
+                intent.putExtra("LONGITUDE", userModelList.get(position).getLon());
+                intent.putExtra("nombre",userModelList.get(position).getNombre());
+                view.getContext().startActivity(intent);
+
+            }
+        });
+
+
+
+    }
 
     @Override
     public int getItemCount() {
@@ -132,13 +167,15 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.ViewHolder>  {
     }
 
 
-
     public static class ViewHolder extends RecyclerView.ViewHolder {
         private ImageView image;
         private TextView name;
         private TextView telefono;
         private TextView web;
         private Button reservar;
+        private Button verMapa;
+
+
 
         public ViewHolder(View v) {
             super(v);
@@ -147,11 +184,15 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.ViewHolder>  {
             telefono = (TextView) v.findViewById(R.id.textView9);
             image = (ImageView) v.findViewById(R.id.imageView2);
             web = (TextView) v.findViewById(R.id.textView);
-            reservar=(Button)v.findViewById(R.id.button2);
+            reservar = (Button) v.findViewById(R.id.button2);
+            verMapa=v.findViewById(R.id.button4);
+
 
 
 
 
         }
+
+
     }
 }
