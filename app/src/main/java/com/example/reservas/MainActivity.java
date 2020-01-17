@@ -46,12 +46,15 @@ public class MainActivity extends AppCompatActivity {
     private RecyclerView.Adapter mAdapter;
     List<Alojamieno> mDataset;
     List<Alojamieno> aux;
+    ArrayList<String> nombres;
 
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        ConexionAlojamientos conexionAlojamientos= new ConexionAlojamientos();
+        //nombres= conexionAlojamientos.execute("");
 
 
 
