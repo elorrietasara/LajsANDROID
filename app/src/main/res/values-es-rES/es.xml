@@ -33,6 +33,6 @@
     </string-array>
     <string name="capacidad">Capacidad</string>
     <string name="filtrar">FILTRAR</string>
-    <string name="telefono">Teléfono</string>
+    <string name="telefono">Teléfono:</string>
     <string name="reservar">RESERVAR</string>
 </resources>

@@ -798,6 +798,7 @@ drawable abc_vector_test
 drawable amu_bubble_mask
 drawable amu_bubble_shadow
 drawable blue_button_background
+drawable button
 drawable calendar_bg_selector
 drawable calendar_text_selector
 drawable casa
@@ -941,6 +942,7 @@ id button
 id button2
 id button3
 id button4
+id button5
 id buttonPanel
 id buttons_container
 id calendar_grid
@@ -1157,6 +1159,7 @@ layout activity_filter
 layout activity_main
 layout activity_maps
 layout activity_maps2
+layout activity_registro
 layout activity_reserva
 layout adapteraloj
 layout alert_dialog
@@ -1203,6 +1206,7 @@ raw amu_unknwown_folder
 raw amu_unsupported
 raw amu_visibility_ground_overlay
 string LOADING
+string Tipo
 string abc_action_bar_home_description
 string abc_action_bar_up_description
 string abc_action_menu_overflow_description
@@ -1243,6 +1247,7 @@ string abc_shareactionprovider_share_with
 string abc_shareactionprovider_share_with_application
 string abc_toolbar_collapse_description
 string app_name
+string capacidad
 string common_google_play_services_enable_button
 string common_google_play_services_enable_text
 string common_google_play_services_enable_title
@@ -1265,9 +1270,13 @@ string default_progressbar
 string dialog_cancel
 string dialog_default_title
 string dialog_ok
+string filtrar
 string google_maps_key
+string provincia
+string reservar
 string search_menu_title
 string status_bar_notification_info_overflow
+string telefono
 string title_activity_maps
 string title_activity_maps2
 style AlertDialog_AppCompat

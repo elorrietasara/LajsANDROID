@@ -29,6 +29,6 @@
     </string-array>
     <string name="capacidad">Capacity</string>
     <string name="filtrar">FILTER</string>
-    <string name="telefono">Phone</string>
+    <string name="telefono">Phone:</string>
     <string name="reservar">RESERVE</string>
 </resources>

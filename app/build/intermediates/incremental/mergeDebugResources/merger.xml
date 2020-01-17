@@ -2849,12 +2849,50 @@
         <item>Camping</item>
 
 
-    </string-array><string name="title_activity_maps2">Map</string></file><file path="C:\RETO2DAMAndroid\LajsANDROID\app\src\main\res\values\styles.xml" qualifiers=""><style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
+    </string-array><string name="title_activity_maps2">Map</string><string name="capacidad">Capacidad</string><string name="filtrar">FILTRAR</string><string name="provincia">Hello World!</string><string name="Tipo">Tipo</string><string name="telefono">Teléfono:</string><string name="reservar">RESERVAR</string></file><file path="C:\RETO2DAMAndroid\LajsANDROID\app\src\main\res\values\styles.xml" qualifiers=""><style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
         
         <item name="colorPrimary">@color/colorPrimary</item>
         <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
         <item name="colorAccent">@color/colorAccent</item>
-    </style></file><file name="activity_maps2" path="C:\RETO2DAMAndroid\LajsANDROID\app\src\main\res\layout\activity_maps2.xml" qualifiers="" type="layout"/><file name="mapa" path="C:\RETO2DAMAndroid\LajsANDROID\app\src\main\res\drawable-mdpi\mapa.png" qualifiers="mdpi-v4" type="drawable"/><file name="activity_reserva" path="C:\RETO2DAMAndroid\LajsANDROID\app\src\main\res\layout\activity_reserva.xml" qualifiers="" type="layout"/></source><source path="C:\RETO2DAMAndroid\LajsANDROID\app\build\generated\res\rs\debug"/><source path="C:\RETO2DAMAndroid\LajsANDROID\app\build\generated\res\resValues\debug"/></dataSet><dataSet aapt-namespace="http://schemas.android.com/apk/res-auto" config="debug$Generated" generated="true" ignore_pattern="!.svn:!.git:!.ds_store:!*.scc:.*:&lt;dir>_*:!CVS:!thumbs.db:!picasa.ini:!*~"><source path="C:\RETO2DAMAndroid\LajsANDROID\app\src\debug\res"/></dataSet><dataSet aapt-namespace="http://schemas.android.com/apk/res-auto" config="debug" generated-set="debug$Generated" ignore_pattern="!.svn:!.git:!.ds_store:!*.scc:.*:&lt;dir>_*:!CVS:!thumbs.db:!picasa.ini:!*~"><source path="C:\RETO2DAMAndroid\LajsANDROID\app\src\debug\res"><file path="C:\RETO2DAMAndroid\LajsANDROID\app\src\debug\res\values\google_maps_api.xml" qualifiers=""><string name="google_maps_key" templateMergeStrategy="preserve" translatable="false">AIzaSyA_30xeXRnkE8Ytcmc9MAGhRtizry65X4g
+    </style></file><file name="activity_maps2" path="C:\RETO2DAMAndroid\LajsANDROID\app\src\main\res\layout\activity_maps2.xml" qualifiers="" type="layout"/><file name="mapa" path="C:\RETO2DAMAndroid\LajsANDROID\app\src\main\res\drawable-mdpi\mapa.png" qualifiers="mdpi-v4" type="drawable"/><file name="activity_reserva" path="C:\RETO2DAMAndroid\LajsANDROID\app\src\main\res\layout\activity_reserva.xml" qualifiers="" type="layout"/><file path="C:\RETO2DAMAndroid\LajsANDROID\app\src\main\res\values-es-rES\es.xml" qualifiers="es-rES"><string name="app_name">Reservas</string><string name="title_activity_maps">Map</string><string name="title_activity_maps2">Map</string><string name="provincia">Provincia</string><string name="Tipo">Tipo</string><string-array name="spinner">
+        <item>Elegir...</item>
+        <item>Montes y Valles vascos</item>
+        <item>Bilbao</item>
+        <item>Vitoria-Gasteiz</item>
+        <item>Costa Vasca</item>
+
+        <item>San Sebastián</item>
+        <item>Rioja Alavesa</item>
+
+
+    </string-array><string-array name="spinner2">
+        <item>Elegir...</item>
+        <item>Albergue</item>
+        <item>Agroturismos</item>
+        <item>Casas Rurales</item>
+        <item>Camping</item>
+
+
+    </string-array><string name="capacidad">Capacidad</string><string name="filtrar">FILTRAR</string><string name="telefono">Teléfono:</string><string name="reservar">RESERVAR</string></file><file path="C:\RETO2DAMAndroid\LajsANDROID\app\src\main\res\values-en\en.xml" qualifiers="en"><string name="app_name">Bookings</string><string name="title_activity_maps">Map</string><string name="title_activity_maps2">Map</string><string name="provincia">Province</string><string name="Tipo">Type</string><string-array name="spinner">
+        <item>Choose...</item>
+        <item>Montes y Valles vascos</item>
+        <item>Bilbao</item>
+        <item>Vitoria-Gasteiz</item>
+        <item>Costa Vasca</item>
+
+        <item>San Sebastián</item>
+        <item>Rioja Alavesa</item>
+
+
+    </string-array><string-array name="spinner2">
+        <item>Choose...</item>
+        <item>Albergue</item>
+        <item>Agroturismos</item>
+        <item>Casas Rurales</item>
+        <item>Camping</item>
+
+
+    </string-array><string name="capacidad">Capacity</string><string name="filtrar">FILTER</string><string name="telefono">Phone:</string><string name="reservar">RESERVE</string></file><file name="button" path="C:\RETO2DAMAndroid\LajsANDROID\app\src\main\res\drawable\button.xml" qualifiers="" type="drawable"/><file name="activity_registro" path="C:\RETO2DAMAndroid\LajsANDROID\app\src\main\res\layout\activity_registro.xml" qualifiers="" type="layout"/></source><source path="C:\RETO2DAMAndroid\LajsANDROID\app\build\generated\res\rs\debug"/><source path="C:\RETO2DAMAndroid\LajsANDROID\app\build\generated\res\resValues\debug"/></dataSet><dataSet aapt-namespace="http://schemas.android.com/apk/res-auto" config="debug$Generated" generated="true" ignore_pattern="!.svn:!.git:!.ds_store:!*.scc:.*:&lt;dir>_*:!CVS:!thumbs.db:!picasa.ini:!*~"><source path="C:\RETO2DAMAndroid\LajsANDROID\app\src\debug\res"/></dataSet><dataSet aapt-namespace="http://schemas.android.com/apk/res-auto" config="debug" generated-set="debug$Generated" ignore_pattern="!.svn:!.git:!.ds_store:!*.scc:.*:&lt;dir>_*:!CVS:!thumbs.db:!picasa.ini:!*~"><source path="C:\RETO2DAMAndroid\LajsANDROID\app\src\debug\res"><file path="C:\RETO2DAMAndroid\LajsANDROID\app\src\debug\res\values\google_maps_api.xml" qualifiers=""><string name="google_maps_key" templateMergeStrategy="preserve" translatable="false">AIzaSyA_30xeXRnkE8Ytcmc9MAGhRtizry65X4g
 </string></file></source></dataSet><mergedItems><configuration qualifiers=""><declare-styleable name="AlertDialog">
         <attr name="android:layout"/>
         <attr format="reference" name="buttonPanelSideLayout"/>

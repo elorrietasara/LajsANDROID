@@ -131,7 +131,7 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.ViewHolder> {
                                 view.getContext().startActivity(intent);
                                 ConexionBBDD connectMySql = new ConexionBBDD();
 
-                                connectMySql.execute(calendar.getSelectedDates().get(0).toString(),calendar.getSelectedDates().get(calendar.getSelectedDates().size()-1).toString(),"1","1");
+                                connectMySql.execute(calendar.getSelectedDates().get(0),calendar.getSelectedDates().get(calendar.getSelectedDates().size()-1),"1","1");
                                 //connectMySql.insertar(calendar.getSelectedDates().get(0),calendar.getSelectedDates().get(calendar.getSelectedDates().size()-1),1,1);
 
                                 sweetAlertDialog.dismiss();

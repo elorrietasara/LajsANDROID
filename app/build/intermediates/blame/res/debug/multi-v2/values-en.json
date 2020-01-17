@@ -1,0 +1,27 @@
+{
+    "logs": [
+        {
+            "outputFile": "C:\\RETO2DAMAndroid\\LajsANDROID\\app\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-en\\values-en.xml",
+            "map": [
+                {
+                    "source": "C:\\RETO2DAMAndroid\\LajsANDROID\\app\\src\\main\\res\\values-en\\en.xml",
+                    "from": {
+                        "startLines": "-1,-1,-1,-1,-1,-1,-1,-1,31,-1,-1",
+                        "startColumns": "-1,-1,-1,-1,-1,-1,-1,-1,4,-1,-1",
+                        "startOffsets": "-1,-1,-1,-1,-1,-1,-1,-1,929,-1,-1",
+                        "endColumns": "-1,-1,-1,-1,-1,-1,-1,-1,43,-1,-1",
+                        "endOffsets": "-1,-1,-1,-1,-1,-1,-1,-1,968,-1,-1"
+                    },
+                    "to": {
+                        "startLines": "2,14,23,24,25,26,27,28,29,30,31",
+                        "startColumns": "4,4,4,4,4,4,4,4,4,4,4",
+                        "startOffsets": "55,355,571,609,655,702,745,792,837,881,933",
+                        "endLines": "13,22,23,24,25,26,27,28,29,30,31",
+                        "endColumns": "19,19,37,45,46,42,46,44,43,51,52",
+                        "endOffsets": "350,566,604,650,697,740,787,832,876,928,981"
+                    }
+                }
+            ]
+        }
+    ]
+}

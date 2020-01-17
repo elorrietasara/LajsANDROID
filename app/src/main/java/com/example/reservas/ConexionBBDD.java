@@ -19,7 +19,7 @@ import java.util.Date;
 
 import static android.app.SearchManager.QUERY;
 
-public class ConexionBBDD   extends AsyncTask<String, Void, String> {
+public class ConexionBBDD   extends AsyncTask<Object, Void, String> {
 
     String res = "";
 
@@ -28,7 +28,7 @@ public class ConexionBBDD   extends AsyncTask<String, Void, String> {
     private static final String password = "lajs";
 
     @Override
-    protected String doInBackground(String... stirn) {
+    protected String doInBackground(Object... stirn) {
 
         System.out.print("DATOS:"+stirn[0]+"  "+stirn[1]+"  "+stirn[2]+"  "+stirn[3]);
 
@@ -41,25 +41,21 @@ public class ConexionBBDD   extends AsyncTask<String, Void, String> {
             String result = "Database Connection Successful\n";
 
 
-            SimpleDateFormat sdf=new SimpleDateFormat("E MMM dd hh:mm:ss z yyyy");
-            SimpleDateFormat sdf2=new SimpleDateFormat("yyyy-MM-dd  hh:mm:ss");
-
-            Date date1= sdf.parse(stirn[0]);
-            Date date2= sdf.parse(stirn[1]);
 
 
-            java.sql.Timestamp SQLdate1 = new java.sql.Timestamp(date1.getTime());
-            java.sql.Timestamp SQLdate2 = new java.sql.Timestamp(date2.getTime());
+
+            java.sql.Date SQLdate1 = new java.sql.Date(((java.util.Date)stirn[0]).getTime());
+            java.sql.Date SQLdate2 = new java.sql.Date(((java.util.Date)stirn[1]).getTime());
 
 
             java.util.Date today = new java.util.Date();
 
             PreparedStatement ps= (PreparedStatement) con.prepareStatement("insert into reserva (fechaEntrada,fechaSalida,idAloj,idUsr) values(?,?,?,?)");
 
-            ps.setTimestamp(1,SQLdate1);
-            ps.setTimestamp(2,SQLdate2);
-            ps.setInt(3,Integer.parseInt(stirn[2]));
-            ps.setInt(4,Integer.parseInt(stirn[3]));
+            ps.setDate(1,SQLdate1);
+            ps.setDate(2,SQLdate2);
+            ps.setInt(3,Integer.parseInt((String)stirn[2]));
+            ps.setInt(4,Integer.parseInt((String)stirn[3]));
             ps.executeUpdate();
 
             ps.close();
