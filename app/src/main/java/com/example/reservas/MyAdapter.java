@@ -53,6 +53,7 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.ViewHolder> {
     GoogleMap map;
     Double lat;
     Double lon;
+    ConexionBBDD con = new ConexionBBDD();
 
     public MyAdapter(List<Alojamieno> userModelList) {
         this.userModelList = userModelList;
@@ -128,6 +129,13 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.ViewHolder> {
                                 intent.putExtra("FechaS",calendar.getSelectedDates().get(calendar.getSelectedDates().size()-1).toString() );
 
                                 view.getContext().startActivity(intent);
+                                ConexionBBDD connectMySql = new ConexionBBDD();
+
+                                connectMySql.execute(calendar.getSelectedDates().get(0).toString(),calendar.getSelectedDates().get(calendar.getSelectedDates().size()-1).toString(),"1","1");
+                                //connectMySql.insertar(calendar.getSelectedDates().get(0),calendar.getSelectedDates().get(calendar.getSelectedDates().size()-1),1,1);
+
+                                sweetAlertDialog.dismiss();
+
                             }
                         })
 

@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+
+
+<resources>
+    <string name="app_name">Reservas</string>
+    <string name="title_activity_maps">Map</string>
+    <string name="title_activity_maps2">Map</string>
+
+    <string name="provincia">Provincia</string>
+
+    <string name="Tipo">Tipo</string>
+    <string-array name="spinner">
+        <item>Elegir...</item>
+        <item>Montes y Valles vascos</item>
+        <item>Bilbao</item>
+        <item>Vitoria-Gasteiz</item>
+        <item>Costa Vasca</item>
+
+        <item>San Sebastián</item>
+        <item>Rioja Alavesa</item>
+
+
+    </string-array>
+    <string-array name="spinner2">
+        <item>Elegir...</item>
+        <item>Albergue</item>
+        <item>Agroturismos</item>
+        <item>Casas Rurales</item>
+        <item>Camping</item>
+
+
+    </string-array>
+    <string name="capacidad">Capacidad</string>
+    <string name="filtrar">FILTRAR</string>
+    <string name="telefono">Teléfono</string>
+    <string name="reservar">RESERVAR</string>
+</resources>

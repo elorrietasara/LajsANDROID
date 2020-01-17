@@ -23,4 +23,12 @@
 
     </string-array>
     <string name="title_activity_maps2">Map</string>
+    <string name="provincia">Hello World!</string>
+
+    <string name="Tipo">Tipo</string>
+    <string name="capacidad">Capacidad</string>
+    <string name="filtrar">FILTRAR</string>
+    <string name="telefono">Teléfono</string>
+    <string name="reservar">RESERVAR</string>
+
 </resources>

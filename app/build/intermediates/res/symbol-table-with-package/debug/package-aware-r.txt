@@ -995,6 +995,7 @@ id hybrid
 id icon
 id icon_group
 id icon_only
+id idioma
 id ifRoom
 id image
 id imageView

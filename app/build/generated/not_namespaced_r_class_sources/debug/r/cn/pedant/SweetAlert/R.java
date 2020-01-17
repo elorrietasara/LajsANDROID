@@ -118,19 +118,19 @@ public final class R {
         public static final int custom_view_container = 0x7f080062;
         public static final int error_frame = 0x7f08006f;
         public static final int error_x = 0x7f080070;
-        public static final int loading = 0x7f080091;
-        public static final int mask_left = 0x7f080095;
-        public static final int mask_right = 0x7f080096;
-        public static final int neutral_button = 0x7f08009b;
-        public static final int progressWheel = 0x7f0800a6;
-        public static final int progress_dialog = 0x7f0800a8;
-        public static final int success_frame = 0x7f0800d0;
-        public static final int success_tick = 0x7f0800d1;
-        public static final int title_text = 0x7f0800ec;
-        public static final int warning_frame = 0x7f0800f3;
-        public static final int x = 0x7f0800fa;
-        public static final int y = 0x7f0800fb;
-        public static final int z = 0x7f0800fc;
+        public static final int loading = 0x7f080092;
+        public static final int mask_left = 0x7f080096;
+        public static final int mask_right = 0x7f080097;
+        public static final int neutral_button = 0x7f08009c;
+        public static final int progressWheel = 0x7f0800a7;
+        public static final int progress_dialog = 0x7f0800a9;
+        public static final int success_frame = 0x7f0800d1;
+        public static final int success_tick = 0x7f0800d2;
+        public static final int title_text = 0x7f0800ed;
+        public static final int warning_frame = 0x7f0800f4;
+        public static final int x = 0x7f0800fb;
+        public static final int y = 0x7f0800fc;
+        public static final int z = 0x7f0800fd;
     }
     public static final class layout {
         private layout() {}
