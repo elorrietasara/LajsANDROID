@@ -73,7 +73,7 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.ViewHolder> {
 
         final String name = userModelList.get(position).getNombre();
         String tel = userModelList.get(position).getTelefono();
-        String webb = userModelList.get(position).getLocalidad();
+        String webb = userModelList.get(position).getWeb();
         final String descripcion = userModelList.get(position).getDescripcion();
         lat = userModelList.get(position).getLat();
         lon = userModelList.get(position).getLon();
@@ -82,12 +82,12 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.ViewHolder> {
         aloj.setLat(lat);
         aloj.setLon(lon);
 
+
         userModelList.add(aloj);
-
-
+        holder.provincia.setText(userModelList.get(position).getLocalidad());
         holder.name.setText(name);
         holder.telefono.setText(tel);
-        holder.web.setText(lat+" "+lon);
+        holder.web.setText(webb);
         holder.reservar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(final View view) {
@@ -182,6 +182,7 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.ViewHolder> {
         private TextView web;
         private Button reservar;
         private Button verMapa;
+        private TextView provincia;
 
 
 
@@ -194,6 +195,7 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.ViewHolder> {
             web = (TextView) v.findViewById(R.id.textView);
             reservar = (Button) v.findViewById(R.id.button2);
             verMapa=v.findViewById(R.id.button4);
+            provincia=v.findViewById(R.id.provincia);
 
 
 

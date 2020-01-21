@@ -1038,6 +1038,7 @@ id progressWheel
 id progress_circular
 id progress_dialog
 id progress_horizontal
+id provincia
 id radio
 id right
 id right_icon
@@ -1093,6 +1094,7 @@ id text2
 id textSpacerNoButtons
 id textSpacerNoTitle
 id textView
+id textView10
 id textView2
 id textView3
 id textView4

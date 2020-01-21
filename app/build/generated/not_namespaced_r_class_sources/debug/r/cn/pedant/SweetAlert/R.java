@@ -124,13 +124,13 @@ public final class R {
         public static final int neutral_button = 0x7f08009d;
         public static final int progressWheel = 0x7f0800a8;
         public static final int progress_dialog = 0x7f0800aa;
-        public static final int success_frame = 0x7f0800d2;
-        public static final int success_tick = 0x7f0800d3;
-        public static final int title_text = 0x7f0800ee;
-        public static final int warning_frame = 0x7f0800f5;
-        public static final int x = 0x7f0800fc;
-        public static final int y = 0x7f0800fd;
-        public static final int z = 0x7f0800fe;
+        public static final int success_frame = 0x7f0800d3;
+        public static final int success_tick = 0x7f0800d4;
+        public static final int title_text = 0x7f0800f0;
+        public static final int warning_frame = 0x7f0800f7;
+        public static final int x = 0x7f0800fe;
+        public static final int y = 0x7f0800ff;
+        public static final int z = 0x7f080100;
     }
     public static final class layout {
         private layout() {}

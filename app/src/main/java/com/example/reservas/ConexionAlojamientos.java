@@ -2,27 +2,27 @@ package com.example.reservas;
 
 import android.os.AsyncTask;
 
-import androidx.viewpager.widget.PagerAdapter;
-
-import com.mysql.jdbc.PreparedStatement;
+import androidx.recyclerview.widget.RecyclerView;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.ResultSet;
 import java.sql.Statement;
 import java.util.ArrayList;
+import java.util.List;
 
-public class ConexionAlojamientos  extends AsyncTask {
-
-    String res = "";
+public class ConexionAlojamientos  extends AsyncTask<Void, Void, List<String>> {
 
     private static final String url = "jdbc:mysql://192.168.101.35:3306/alojamientos?serverTimezone=UTC";
     private static final String user = "lajs";
     private static final String password = "lajs";
-    ArrayList<String> nombres;
+    List<String> nombres=new ArrayList<String>();
+    String res="";
+
+
 
     @Override
-    protected ArrayList<String> doInBackground(Object... stirn) {
+    protected List<String> doInBackground(Void... stirn) {
 
 
 
@@ -50,7 +50,7 @@ public class ConexionAlojamientos  extends AsyncTask {
 
 
 
-        System.out.print(resultado);
+        //System.out.print(resultado);
 
 
         } catch (Exception e) {
@@ -58,5 +58,20 @@ public class ConexionAlojamientos  extends AsyncTask {
             res = e.toString();
         }
         return nombres;
+    }
+    @Override
+    protected void  onPostExecute(List<String> lista) {
+
+        super.onPostExecute(lista);
+        // Limpiar elementos antiguos
+
+
+        // Parar la animación del indicador
+
+       // List<String> aux=(List<String>)obj;
+       // System.out.print("Hola  " + aux.size() );
+
+
+
     }
 }

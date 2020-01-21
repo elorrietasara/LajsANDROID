@@ -11,13 +11,7 @@ public class Alojamieno {
     String localidad;
     String descripcion;
 
-    public Integer getCapacidad() {
-        return capacidad;
-    }
 
-    public void setCapacidad(Integer capacidad) {
-        this.capacidad = capacidad;
-    }
 
     Integer capacidad;
     public Alojamieno() {
@@ -37,6 +31,14 @@ public class Alojamieno {
         this.capacidad=capacidad;
 
     }
+    public Integer getCapacidad() {
+        return capacidad;
+    }
+
+    public void setCapacidad(Integer capacidad) {
+        this.capacidad = capacidad;
+    }
+
     public String getTipo() {
         return tipo;
     }

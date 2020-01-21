@@ -9,6 +9,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import android.app.Notification;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.os.AsyncTask;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.Menu;
@@ -46,7 +47,7 @@ public class MainActivity extends AppCompatActivity {
     private RecyclerView.Adapter mAdapter;
     List<Alojamieno> mDataset;
     List<Alojamieno> aux;
-    ArrayList<String> nombres;
+    List<String> nombres= new ArrayList<String>();
 
 
     @Override
@@ -54,7 +55,8 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         ConexionAlojamientos conexionAlojamientos= new ConexionAlojamientos();
-        //nombres= conexionAlojamientos.execute("");
+
+
 
 
 
@@ -64,6 +66,9 @@ public class MainActivity extends AppCompatActivity {
 
         //creamos la vista de la lista
         recyclerView = (RecyclerView) findViewById(R.id.my_recyclerview);
+
+        new ConexionAlojamientos().execute();
+
         // use this setting to improve performance if you know that changes
         // in content do not change the layout size of the RecyclerView
         recyclerView.setHasFixedSize(true);
@@ -75,7 +80,7 @@ public class MainActivity extends AppCompatActivity {
 
         recyclerView.setLayoutManager(layoutManager);
         mDataset = new ArrayList<Alojamieno>();
-        try {
+       /* try {
             JSONArray jArray = new JSONArray(readJSONFromAsset());
             for (int i = 0; i < jArray.length(); ++i) {
                 String name = jArray.getJSONObject(i).getString("nombre");// name of the country
@@ -92,7 +97,7 @@ public class MainActivity extends AppCompatActivity {
             }
         } catch (JSONException e) {
             e.printStackTrace();
-        }
+        }*/
         mAdapter = new MyAdapter(mDataset);
         mAdapter.notifyDataSetChanged();
         recyclerView.setAdapter(mAdapter);
@@ -177,7 +182,7 @@ public class MainActivity extends AppCompatActivity {
 
 
                         mDataset.clear();
-                        try {
+                      /*  try {
                             aux = new ArrayList<Alojamieno>();
                             JSONArray jArray = new JSONArray(readJSONFromAsset());
                             for (int i = 0; i < jArray.length(); ++i) {
@@ -195,7 +200,7 @@ public class MainActivity extends AppCompatActivity {
                             }
                         } catch (JSONException e) {
                             e.printStackTrace();
-                        }
+                        }*/
 
                         for (int i = 0; i < aux.size(); i++) {
                             String loc = aux.get(i).getLocalidad().toString();
@@ -307,7 +312,78 @@ public class MainActivity extends AppCompatActivity {
     }
 
 
+    public class ConexionAlojamientos  extends AsyncTask<Void, Void, List<Alojamieno>> {
+
+        private static final String url = "jdbc:mysql://192.168.101.35:3306/alojamientos?serverTimezone=UTC";
+        private static final String user = "lajs";
+        private static final String password = "lajs";
+        List<Alojamieno> nombres = new ArrayList<Alojamieno>();
+        String res = "";
+        Integer i = 0;
 
 
+        @Override
+        protected List<Alojamieno> doInBackground(Void... stirn) {
+
+
+            try {
+
+                Class.forName("com.mysql.jdbc.Driver").newInstance();
+                Connection con = DriverManager.getConnection(url, user, password);
+                System.out.println("Databaseection success");
+
+                String result = "Database Connection Successful\n";
+
+                Statement st = con.createStatement();
+        /*Se ejecutará la consulta que devolverá todas las filas almacenadas,
+        a excepción del campo id.*/
+                ResultSet rs = st.executeQuery("Select * from alojamiento ");
+
+                String resultado = "";
+                while (rs.next()) {
+                    resultado += rs.getString("nombre");
+                    resultado += rs.getString("telefono") + "\n";
+                    Alojamieno alojamiento = new Alojamieno();
+                    alojamiento.setNombre(rs.getString("nombre"));
+                    alojamiento.setLat(rs.getDouble("latitud"));
+                    alojamiento.setLon(rs.getDouble("longitud"));
+                    alojamiento.setTelefono(rs.getString("telefono"));
+                    alojamiento.setWeb(rs.getString("web"));
+                    alojamiento.setDescripcion(rs.getString("descripcion"));
+                    alojamiento.setLocalidad(rs.getString("provincia"));
+                    nombres.add(alojamiento);
+                    i += 1;
+                }
+
+
+                //System.out.print(resultado);
+
+
+            } catch (Exception e) {
+                e.printStackTrace();
+                res = e.toString();
+            }
+            return nombres;
+        }
+
+        @Override
+        protected void onPostExecute(List<Alojamieno> lista) {
+
+            super.onPostExecute(lista);
+            // Limpiar elementos antiguos
+            mDataset.clear();
+
+            // Añadir elementos nuevos
+            mDataset.addAll(lista);
+            mAdapter.notifyDataSetChanged();
+
+            // Parar la animación del indicador
+
+            // List<String> aux=(List<String>)obj;
+            // System.out.print("Hola  " + aux.size() );
+
+
+        }
+    }
 
 }

@@ -29,6 +29,8 @@ public class MapsActivity2 extends FragmentActivity implements OnMapReadyCallbac
         SupportMapFragment mapFragment = (SupportMapFragment) getSupportFragmentManager().findFragmentById(R.id.map);
         mapFragment.getMapAsync(this);
 
+
+
         Bundle bundle = getIntent().getExtras();
         dLatitude = bundle.getDouble("LATITUDE");
         dLongitude = bundle.getDouble("LONGITUDE");
@@ -55,6 +57,6 @@ public class MapsActivity2 extends FragmentActivity implements OnMapReadyCallbac
         LatLng latlng = new LatLng(dLatitude, dLongitude);
         mMap.addMarker(new MarkerOptions().position(latlng).title(nombre));
         mMap.moveCamera(CameraUpdateFactory.newLatLng(latlng));
-        mMap.animateCamera(CameraUpdateFactory.newLatLngZoom(latlng, 9.0f));
+        mMap.animateCamera(CameraUpdateFactory.newLatLngZoom(latlng, 21.0f));
     }
 }
