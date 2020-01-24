@@ -68,27 +68,27 @@ public class RegistroActivity extends AppCompatActivity {
     }
     public void registro(View v){
         if(nombre.getText().toString().equals("")){
-            Toast.makeText(this," Rellene nombre", Toast.LENGTH_LONG).show();
+            Toast.makeText(this,"Introduzca nombre", Toast.LENGTH_LONG).show();
 
         }else if(apellido.getText().toString().equals("")) {
-            Toast.makeText(this, " Rellene apellido", Toast.LENGTH_LONG).show();
+            Toast.makeText(this, " Introduzca apellido", Toast.LENGTH_LONG).show();
 
 
         }
         else if(dni.getText().toString().equals("")) {
-            Toast.makeText(this, " Rellene dni", Toast.LENGTH_LONG).show();
+            Toast.makeText(this, "Introduzca dni", Toast.LENGTH_LONG).show();
 
         }
         else if(usuario.getText().toString().equals("")) {
-            Toast.makeText(this, " Rellene usuario", Toast.LENGTH_LONG).show();
+            Toast.makeText(this, " Introduzca usuario", Toast.LENGTH_LONG).show();
 
         }
        else  if(contraseña.getText().toString().equals("")) {
-            Toast.makeText(this, " Rellene contraseña", Toast.LENGTH_LONG).show();
+            Toast.makeText(this, "Introduzca contraseña", Toast.LENGTH_LONG).show();
 
         }
        else if(nacimiento.getText().toString().equals("")){
-            Toast.makeText(this," Rellene fecha", Toast.LENGTH_LONG).show();
+            Toast.makeText(this,"Introduzca fecha", Toast.LENGTH_LONG).show();
 
         }
 
