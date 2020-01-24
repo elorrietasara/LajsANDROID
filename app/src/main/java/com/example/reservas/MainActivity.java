@@ -6,8 +6,6 @@ import androidx.recyclerview.widget.DividerItemDecoration;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
-import android.app.Notification;
-import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.AsyncTask;
 import android.os.Bundle;
@@ -21,33 +19,26 @@ import android.widget.EditText;
 import android.widget.SeekBar;
 import android.widget.Spinner;
 import android.widget.TextView;
-import android.widget.Toast;
-
-import org.json.JSONArray;
-import org.json.JSONException;
 
 import java.io.IOException;
 import java.io.InputStream;
 import java.sql.Connection;
 import java.sql.DriverManager;
-import java.sql.PreparedStatement;
 import java.sql.ResultSet;
-import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.ArrayList;
-import java.util.Calendar;
 import java.util.List;
 
 import jp.wasabeef.recyclerview.animators.FadeInDownAnimator;
-import jp.wasabeef.recyclerview.animators.SlideInUpAnimator;
 
 public class MainActivity extends AppCompatActivity {
     RecyclerView recyclerView;
     RecyclerView.LayoutManager layoutManager;
     private RecyclerView.Adapter mAdapter;
     List<Alojamieno> mDataset;
-    List<Alojamieno> aux;
+    List<Alojamieno> aux= new ArrayList<Alojamieno>();
     List<String> nombres= new ArrayList<String>();
+    String usuario;
 
 
     @Override
@@ -69,6 +60,7 @@ public class MainActivity extends AppCompatActivity {
 
         new ConexionAlojamientos().execute();
 
+
         // use this setting to improve performance if you know that changes
         // in content do not change the layout size of the RecyclerView
         recyclerView.setHasFixedSize(true);
@@ -80,6 +72,7 @@ public class MainActivity extends AppCompatActivity {
 
         recyclerView.setLayoutManager(layoutManager);
         mDataset = new ArrayList<Alojamieno>();
+
        /* try {
             JSONArray jArray = new JSONArray(readJSONFromAsset());
             for (int i = 0; i < jArray.length(); ++i) {
@@ -180,27 +173,8 @@ public class MainActivity extends AppCompatActivity {
                         String tipo = tipos.getSelectedItem().toString();
                         String provincia = provincias.getSelectedItem().toString();
 
-
+                        new ConexionAlojamientos();
                         mDataset.clear();
-                      /*  try {
-                            aux = new ArrayList<Alojamieno>();
-                            JSONArray jArray = new JSONArray(readJSONFromAsset());
-                            for (int i = 0; i < jArray.length(); ++i) {
-                                String name = jArray.getJSONObject(i).getString("nombre");// name of the country
-                                String telf = jArray.getJSONObject(i).getString("telefono");// name of the country
-                                String web = jArray.getJSONObject(i).getString("web");
-                                String descrip = jArray.getJSONObject(i).getString("descripcion");
-                                String localidad = jArray.getJSONObject(i).getString("localidad");
-                                Double lat = Double.parseDouble(jArray.getJSONObject(i).getString("latitud"));
-                                Double lon = Double.parseDouble(jArray.getJSONObject(i).getString("longitud"));
-                                String tipe = jArray.getJSONObject(i).getString("tipo");
-                                Integer capaz = Integer.parseInt(jArray.getJSONObject(i).getString("capacidad"));
-                                Alojamieno alojamiento = new Alojamieno(name, telf, web, lat, lon, descrip, localidad, tipe, capaz);
-                                aux.add(alojamiento);
-                            }
-                        } catch (JSONException e) {
-                            e.printStackTrace();
-                        }*/
 
                         for (int i = 0; i < aux.size(); i++) {
                             String loc = aux.get(i).getLocalidad().toString();
@@ -271,18 +245,18 @@ public class MainActivity extends AppCompatActivity {
 
 
                 break;
-            case R.id.user:
+           /* case R.id.user:
                 LayoutInflater layoutinflater2 = LayoutInflater.from(this);
-                final View promptUserView2 = layoutinflater2.inflate(R.layout.login, null);
+                //final View promptUserView2 = layoutinflater2.inflate(R.layout.login, null);
 
                 final AlertDialog.Builder alertDialogBuilder2 = new AlertDialog.Builder(this);
 
-                alertDialogBuilder2.setView(promptUserView2);
+               // alertDialogBuilder2.setView(promptUserView2);
                 alertDialogBuilder2.setTitle("Login");
                 final AlertDialog alertDialog2 = alertDialogBuilder2.create();
                 alertDialog2.setCancelable(false);
                 alertDialog2.show();
-                Button boton2 = (Button) promptUserView2.findViewById(R.id.button3);
+               /Button boton2 = (Button) promptUserView2.findViewById(R.id.button3);
                 final EditText usu = (EditText) promptUserView2.findViewById(R.id.editText);
                 final EditText contra = (EditText) promptUserView2.findViewById(R.id.editText2);
                 boton2.setOnClickListener(new View.OnClickListener() {
@@ -296,7 +270,8 @@ public class MainActivity extends AppCompatActivity {
                             ad.show();
 
                         } else {
-                            alertDialog2.dismiss();
+                           login(usu, contra).toString();
+                           alertDialog2.dismiss();
                         }
 
                     }
@@ -305,11 +280,18 @@ public class MainActivity extends AppCompatActivity {
             case R.id.idioma:
 
 
-            break;
+            break;*/
 
         }
         return super.onOptionsItemSelected(item);
     }
+
+
+
+
+
+
+
 
 
     public class ConexionAlojamientos  extends AsyncTask<Void, Void, List<Alojamieno>> {
@@ -351,6 +333,9 @@ public class MainActivity extends AppCompatActivity {
                     alojamiento.setWeb(rs.getString("web"));
                     alojamiento.setDescripcion(rs.getString("descripcion"));
                     alojamiento.setLocalidad(rs.getString("provincia"));
+                    alojamiento.setTipo(rs.getString("tipo"));
+                    alojamiento.setDireccion(rs.getString("direccion"));
+                    aux.add(alojamiento);
                     nombres.add(alojamiento);
                     i += 1;
                 }
@@ -385,5 +370,6 @@ public class MainActivity extends AppCompatActivity {
 
         }
     }
+
 
 }

@@ -1,9 +1,9 @@
 -- Merging decision tree log ---
 manifest
-ADDED from C:\RETO2DAMAndroid\LajsANDROID\app\src\main\AndroidManifest.xml:2:1-56:12
-INJECTED from C:\RETO2DAMAndroid\LajsANDROID\app\src\main\AndroidManifest.xml:2:1-56:12
-INJECTED from C:\RETO2DAMAndroid\LajsANDROID\app\src\main\AndroidManifest.xml:2:1-56:12
-INJECTED from C:\RETO2DAMAndroid\LajsANDROID\app\src\main\AndroidManifest.xml:2:1-56:12
+ADDED from C:\RETO2DAMAndroid\LajsANDROID\app\src\main\AndroidManifest.xml:2:1-57:12
+INJECTED from C:\RETO2DAMAndroid\LajsANDROID\app\src\main\AndroidManifest.xml:2:1-57:12
+INJECTED from C:\RETO2DAMAndroid\LajsANDROID\app\src\main\AndroidManifest.xml:2:1-57:12
+INJECTED from C:\RETO2DAMAndroid\LajsANDROID\app\src\main\AndroidManifest.xml:2:1-57:12
 MERGED from [com.savvi.datepicker:rangepicker:1.2.0] C:\Users\IN1DM3B_17\.gradle\caches\transforms-2\files-2.1\03e406e72316e18ed27e613e7ca6fdfe\rangepicker-1.2.0\AndroidManifest.xml:2:1-11:12
 MERGED from [androidx.appcompat:appcompat:1.0.2] C:\Users\IN1DM3B_17\.gradle\caches\transforms-2\files-2.1\f6a183f8595ca34f3d5cc99d1f8bc322\appcompat-1.0.2\AndroidManifest.xml:17:1-22:12
 MERGED from [androidx.constraintlayout:constraintlayout:1.1.3] C:\Users\IN1DM3B_17\.gradle\caches\transforms-2\files-2.1\8392647ca9531c13a8f0d6b7ad086e7e\constraintlayout-1.1.3\AndroidManifest.xml:2:1-11:12
@@ -45,20 +45,20 @@ MERGED from [androidx.lifecycle:lifecycle-livedata:2.0.0] C:\Users\IN1DM3B_17\.g
 MERGED from [androidx.lifecycle:lifecycle-livedata-core:2.0.0] C:\Users\IN1DM3B_17\.gradle\caches\transforms-2\files-2.1\66e997bde0b6ece28f7fd36f5f4a1584\lifecycle-livedata-core-2.0.0\AndroidManifest.xml:17:1-22:12
 MERGED from [androidx.arch.core:core-runtime:2.0.0] C:\Users\IN1DM3B_17\.gradle\caches\transforms-2\files-2.1\8787729f29cf7add1bc29c81caccddfd\core-runtime-2.0.0\AndroidManifest.xml:17:1-22:12
 MERGED from [com.pnikosis:materialish-progress:1.7] C:\Users\IN1DM3B_17\.gradle\caches\transforms-2\files-2.1\b8cf40555cb0f32eece4be9982784262\materialish-progress-1.7\AndroidManifest.xml:2:1-13:12
-INJECTED from C:\RETO2DAMAndroid\LajsANDROID\app\src\main\AndroidManifest.xml:2:1-56:12
-INJECTED from C:\RETO2DAMAndroid\LajsANDROID\app\src\main\AndroidManifest.xml:2:1-56:12
-INJECTED from C:\RETO2DAMAndroid\LajsANDROID\app\src\main\AndroidManifest.xml:2:1-56:12
+INJECTED from C:\RETO2DAMAndroid\LajsANDROID\app\src\main\AndroidManifest.xml:2:1-57:12
+INJECTED from C:\RETO2DAMAndroid\LajsANDROID\app\src\main\AndroidManifest.xml:2:1-57:12
+INJECTED from C:\RETO2DAMAndroid\LajsANDROID\app\src\main\AndroidManifest.xml:2:1-57:12
 	package
 		ADDED from C:\RETO2DAMAndroid\LajsANDROID\app\src\main\AndroidManifest.xml:3:5-35
 		INJECTED from C:\RETO2DAMAndroid\LajsANDROID\app\src\main\AndroidManifest.xml
 		INJECTED from C:\RETO2DAMAndroid\LajsANDROID\app\src\main\AndroidManifest.xml
 	android:versionName
 		INJECTED from C:\RETO2DAMAndroid\LajsANDROID\app\src\main\AndroidManifest.xml
-		ADDED from C:\RETO2DAMAndroid\LajsANDROID\app\src\main\AndroidManifest.xml:2:1-56:12
+		ADDED from C:\RETO2DAMAndroid\LajsANDROID\app\src\main\AndroidManifest.xml:2:1-57:12
 		INJECTED from C:\RETO2DAMAndroid\LajsANDROID\app\src\main\AndroidManifest.xml
 	android:versionCode
 		INJECTED from C:\RETO2DAMAndroid\LajsANDROID\app\src\main\AndroidManifest.xml
-		ADDED from C:\RETO2DAMAndroid\LajsANDROID\app\src\main\AndroidManifest.xml:2:1-56:12
+		ADDED from C:\RETO2DAMAndroid\LajsANDROID\app\src\main\AndroidManifest.xml:2:1-57:12
 		INJECTED from C:\RETO2DAMAndroid\LajsANDROID\app\src\main\AndroidManifest.xml
 	xmlns:android
 		ADDED from C:\RETO2DAMAndroid\LajsANDROID\app\src\main\AndroidManifest.xml:2:11-69
@@ -71,7 +71,7 @@ ADDED from C:\RETO2DAMAndroid\LajsANDROID\app\src\main\AndroidManifest.xml:10:5-
 	android:name
 		ADDED from C:\RETO2DAMAndroid\LajsANDROID\app\src\main\AndroidManifest.xml:10:22-87
 application
-ADDED from C:\RETO2DAMAndroid\LajsANDROID\app\src\main\AndroidManifest.xml:12:5-54:19
+ADDED from C:\RETO2DAMAndroid\LajsANDROID\app\src\main\AndroidManifest.xml:12:5-55:19
 MERGED from [androidx.constraintlayout:constraintlayout:1.1.3] C:\Users\IN1DM3B_17\.gradle\caches\transforms-2\files-2.1\8392647ca9531c13a8f0d6b7ad086e7e\constraintlayout-1.1.3\AndroidManifest.xml:9:5-20
 MERGED from [androidx.constraintlayout:constraintlayout:1.1.3] C:\Users\IN1DM3B_17\.gradle\caches\transforms-2\files-2.1\8392647ca9531c13a8f0d6b7ad086e7e\constraintlayout-1.1.3\AndroidManifest.xml:9:5-20
 MERGED from [com.google.android.gms:play-services-maps:17.0.0] C:\Users\IN1DM3B_17\.gradle\caches\transforms-2\files-2.1\71410d59386dba98cbe61d29bc62f196\play-services-maps-17.0.0\AndroidManifest.xml:30:5-36:19
@@ -116,58 +116,62 @@ MERGED from [com.pnikosis:materialish-progress:1.7] C:\Users\IN1DM3B_17\.gradle\
 		ADDED from C:\RETO2DAMAndroid\LajsANDROID\app\src\main\AndroidManifest.xml:13:9-35
 	android:theme
 		ADDED from C:\RETO2DAMAndroid\LajsANDROID\app\src\main\AndroidManifest.xml:19:9-56
-activity#com.example.reservas.RegistroActivity
-ADDED from C:\RETO2DAMAndroid\LajsANDROID\app\src\main\AndroidManifest.xml:20:9-63
-	android:name
-		ADDED from C:\RETO2DAMAndroid\LajsANDROID\app\src\main\AndroidManifest.xml:20:19-51
-activity#com.example.reservas.ReservaActivity
-ADDED from C:\RETO2DAMAndroid\LajsANDROID\app\src\main\AndroidManifest.xml:21:9-53
-	android:name
-		ADDED from C:\RETO2DAMAndroid\LajsANDROID\app\src\main\AndroidManifest.xml:21:19-50
-meta-data#com.google.android.geo.API_KEY
-ADDED from C:\RETO2DAMAndroid\LajsANDROID\app\src\main\AndroidManifest.xml:30:9-32:55
-	android:value
-		ADDED from C:\RETO2DAMAndroid\LajsANDROID\app\src\main\AndroidManifest.xml:32:13-52
-	android:name
-		ADDED from C:\RETO2DAMAndroid\LajsANDROID\app\src\main\AndroidManifest.xml:31:13-58
-activity#com.example.reservas.MapsActivity2
-ADDED from C:\RETO2DAMAndroid\LajsANDROID\app\src\main\AndroidManifest.xml:34:9-36:60
-	android:label
-		ADDED from C:\RETO2DAMAndroid\LajsANDROID\app\src\main\AndroidManifest.xml:36:13-57
-	android:name
-		ADDED from C:\RETO2DAMAndroid\LajsANDROID\app\src\main\AndroidManifest.xml:35:13-42
-activity#com.example.reservas.MapsActivity
-ADDED from C:\RETO2DAMAndroid\LajsANDROID\app\src\main\AndroidManifest.xml:37:9-39:59
-	android:label
-		ADDED from C:\RETO2DAMAndroid\LajsANDROID\app\src\main\AndroidManifest.xml:39:13-56
-	android:name
-		ADDED from C:\RETO2DAMAndroid\LajsANDROID\app\src\main\AndroidManifest.xml:38:13-41
 activity#com.example.reservas.MainActivity
-ADDED from C:\RETO2DAMAndroid\LajsANDROID\app\src\main\AndroidManifest.xml:40:9-46:20
+ADDED from C:\RETO2DAMAndroid\LajsANDROID\app\src\main\AndroidManifest.xml:20:9-59
 	android:name
-		ADDED from C:\RETO2DAMAndroid\LajsANDROID\app\src\main\AndroidManifest.xml:40:19-47
-intent-filter#action:name:android.intent.action.MAIN+category:name:android.intent.category.LAUNCHER
-ADDED from C:\RETO2DAMAndroid\LajsANDROID\app\src\main\AndroidManifest.xml:41:13-45:29
-action#android.intent.action.MAIN
-ADDED from C:\RETO2DAMAndroid\LajsANDROID\app\src\main\AndroidManifest.xml:42:17-69
+		ADDED from C:\RETO2DAMAndroid\LajsANDROID\app\src\main\AndroidManifest.xml:20:19-47
+activity#com.example.reservas.RegistroActivity
+ADDED from C:\RETO2DAMAndroid\LajsANDROID\app\src\main\AndroidManifest.xml:21:9-54
 	android:name
-		ADDED from C:\RETO2DAMAndroid\LajsANDROID\app\src\main\AndroidManifest.xml:42:25-66
-category#android.intent.category.LAUNCHER
-ADDED from C:\RETO2DAMAndroid\LajsANDROID\app\src\main\AndroidManifest.xml:44:17-77
+		ADDED from C:\RETO2DAMAndroid\LajsANDROID\app\src\main\AndroidManifest.xml:21:19-51
+activity#com.example.reservas.ReservaActivity
+ADDED from C:\RETO2DAMAndroid\LajsANDROID\app\src\main\AndroidManifest.xml:22:9-53
 	android:name
-		ADDED from C:\RETO2DAMAndroid\LajsANDROID\app\src\main\AndroidManifest.xml:44:27-74
-activity#com.example.reservas.FilterActivity
-ADDED from C:\RETO2DAMAndroid\LajsANDROID\app\src\main\AndroidManifest.xml:47:9-53:20
-	android:parentActivityName
-		ADDED from C:\RETO2DAMAndroid\LajsANDROID\app\src\main\AndroidManifest.xml:49:13-55
-	android:name
-		ADDED from C:\RETO2DAMAndroid\LajsANDROID\app\src\main\AndroidManifest.xml:48:13-43
-meta-data#android.support.PARENT_ACTIVITY
-ADDED from C:\RETO2DAMAndroid\LajsANDROID\app\src\main\AndroidManifest.xml:50:13-52:49
+		ADDED from C:\RETO2DAMAndroid\LajsANDROID\app\src\main\AndroidManifest.xml:22:19-50
+meta-data#com.google.android.geo.API_KEY
+ADDED from C:\RETO2DAMAndroid\LajsANDROID\app\src\main\AndroidManifest.xml:31:9-33:55
 	android:value
-		ADDED from C:\RETO2DAMAndroid\LajsANDROID\app\src\main\AndroidManifest.xml:52:17-46
+		ADDED from C:\RETO2DAMAndroid\LajsANDROID\app\src\main\AndroidManifest.xml:33:13-52
 	android:name
-		ADDED from C:\RETO2DAMAndroid\LajsANDROID\app\src\main\AndroidManifest.xml:51:17-63
+		ADDED from C:\RETO2DAMAndroid\LajsANDROID\app\src\main\AndroidManifest.xml:32:13-58
+activity#com.example.reservas.MapsActivity2
+ADDED from C:\RETO2DAMAndroid\LajsANDROID\app\src\main\AndroidManifest.xml:35:9-37:60
+	android:label
+		ADDED from C:\RETO2DAMAndroid\LajsANDROID\app\src\main\AndroidManifest.xml:37:13-57
+	android:name
+		ADDED from C:\RETO2DAMAndroid\LajsANDROID\app\src\main\AndroidManifest.xml:36:13-42
+activity#com.example.reservas.MapsActivity
+ADDED from C:\RETO2DAMAndroid\LajsANDROID\app\src\main\AndroidManifest.xml:38:9-40:59
+	android:label
+		ADDED from C:\RETO2DAMAndroid\LajsANDROID\app\src\main\AndroidManifest.xml:40:13-56
+	android:name
+		ADDED from C:\RETO2DAMAndroid\LajsANDROID\app\src\main\AndroidManifest.xml:39:13-41
+activity#com.example.reservas.LoginActivity
+ADDED from C:\RETO2DAMAndroid\LajsANDROID\app\src\main\AndroidManifest.xml:41:9-47:20
+	android:name
+		ADDED from C:\RETO2DAMAndroid\LajsANDROID\app\src\main\AndroidManifest.xml:41:19-48
+intent-filter#action:name:android.intent.action.MAIN+category:name:android.intent.category.LAUNCHER
+ADDED from C:\RETO2DAMAndroid\LajsANDROID\app\src\main\AndroidManifest.xml:42:13-46:29
+action#android.intent.action.MAIN
+ADDED from C:\RETO2DAMAndroid\LajsANDROID\app\src\main\AndroidManifest.xml:43:17-69
+	android:name
+		ADDED from C:\RETO2DAMAndroid\LajsANDROID\app\src\main\AndroidManifest.xml:43:25-66
+category#android.intent.category.LAUNCHER
+ADDED from C:\RETO2DAMAndroid\LajsANDROID\app\src\main\AndroidManifest.xml:45:17-77
+	android:name
+		ADDED from C:\RETO2DAMAndroid\LajsANDROID\app\src\main\AndroidManifest.xml:45:27-74
+activity#com.example.reservas.FilterActivity
+ADDED from C:\RETO2DAMAndroid\LajsANDROID\app\src\main\AndroidManifest.xml:48:9-54:20
+	android:parentActivityName
+		ADDED from C:\RETO2DAMAndroid\LajsANDROID\app\src\main\AndroidManifest.xml:50:13-55
+	android:name
+		ADDED from C:\RETO2DAMAndroid\LajsANDROID\app\src\main\AndroidManifest.xml:49:13-43
+meta-data#android.support.PARENT_ACTIVITY
+ADDED from C:\RETO2DAMAndroid\LajsANDROID\app\src\main\AndroidManifest.xml:51:13-53:49
+	android:value
+		ADDED from C:\RETO2DAMAndroid\LajsANDROID\app\src\main\AndroidManifest.xml:53:17-46
+	android:name
+		ADDED from C:\RETO2DAMAndroid\LajsANDROID\app\src\main\AndroidManifest.xml:52:17-63
 uses-sdk
 INJECTED from C:\RETO2DAMAndroid\LajsANDROID\app\src\main\AndroidManifest.xml reason: use-sdk injection requested
 INJECTED from C:\RETO2DAMAndroid\LajsANDROID\app\src\main\AndroidManifest.xml

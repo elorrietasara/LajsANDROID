@@ -35,6 +35,7 @@
         android:supportsRtl="true"
         android:testOnly="true"
         android:theme="@style/Theme.AppCompat.DayNight" >
+        <activity android:name="com.example.reservas.MainActivity" />
         <activity android:name="com.example.reservas.RegistroActivity" />
         <activity android:name="com.example.reservas.ReservaActivity" />
         <!--
@@ -55,7 +56,7 @@
         <activity
             android:name="com.example.reservas.MapsActivity"
             android:label="@string/title_activity_maps" />
-        <activity android:name="com.example.reservas.MainActivity" >
+        <activity android:name="com.example.reservas.LoginActivity" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

@@ -8,13 +8,9 @@
     <string name="Tipo">Type</string>
     <string-array name="spinner">
         <item>Choose...</item>
-        <item>Montes y Valles vascos</item>
-        <item>Bilbao</item>
-        <item>Vitoria-Gasteiz</item>
-        <item>Costa Vasca</item>
-
-        <item>San Sebastián</item>
-        <item>Rioja Alavesa</item>
+        <item>Bizkaia</item>
+        <item>Gipuzkoa</item>
+        <item>Araba/Álava</item>
 
 
     </string-array>

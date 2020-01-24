@@ -37,7 +37,7 @@
 24-->[com.google.android.gms:play-services-maps:17.0.0] C:\Users\IN1DM3B_17\.gradle\caches\transforms-2\files-2.1\71410d59386dba98cbe61d29bc62f196\play-services-maps-17.0.0\AndroidManifest.xml:28:9-32
 25
 26    <application
-26-->C:\RETO2DAMAndroid\LajsANDROID\app\src\main\AndroidManifest.xml:12:5-54:19
+26-->C:\RETO2DAMAndroid\LajsANDROID\app\src\main\AndroidManifest.xml:12:5-55:19
 27        android:allowBackup="true"
 27-->C:\RETO2DAMAndroid\LajsANDROID\app\src\main\AndroidManifest.xml:13:9-35
 28        android:appComponentFactory="androidx.core.app.CoreComponentFactory"
@@ -56,89 +56,92 @@
 35        android:testOnly="true"
 36        android:theme="@style/Theme.AppCompat.DayNight" >
 36-->C:\RETO2DAMAndroid\LajsANDROID\app\src\main\AndroidManifest.xml:19:9-56
-37        <activity android:name="com.example.reservas.RegistroActivity" />
-37-->C:\RETO2DAMAndroid\LajsANDROID\app\src\main\AndroidManifest.xml:20:9-63
-37-->C:\RETO2DAMAndroid\LajsANDROID\app\src\main\AndroidManifest.xml:20:19-51
-38        <activity android:name="com.example.reservas.ReservaActivity" />
-38-->C:\RETO2DAMAndroid\LajsANDROID\app\src\main\AndroidManifest.xml:21:9-53
-38-->C:\RETO2DAMAndroid\LajsANDROID\app\src\main\AndroidManifest.xml:21:19-50
-39        <!--
-40             The API key for Google Maps-based APIs is defined as a string resource.
-41             (See the file "res/values/google_maps_api.xml").
-42             Note that the API key is linked to the encryption key used to sign the APK.
-43             You need a different API key for each encryption key, including the release key that is used to
-44             sign the APK for publishing.
-45             You can define the keys for the debug and release targets in src/debug/ and src/release/.
-46        -->
-47        <meta-data
-47-->C:\RETO2DAMAndroid\LajsANDROID\app\src\main\AndroidManifest.xml:30:9-32:55
-48            android:name="com.google.android.geo.API_KEY"
-48-->C:\RETO2DAMAndroid\LajsANDROID\app\src\main\AndroidManifest.xml:31:13-58
-49            android:value="@string/google_maps_key" />
-49-->C:\RETO2DAMAndroid\LajsANDROID\app\src\main\AndroidManifest.xml:32:13-52
-50
-51        <activity
-51-->C:\RETO2DAMAndroid\LajsANDROID\app\src\main\AndroidManifest.xml:34:9-36:60
-52            android:name="com.example.reservas.MapsActivity2"
-52-->C:\RETO2DAMAndroid\LajsANDROID\app\src\main\AndroidManifest.xml:35:13-42
-53            android:label="@string/title_activity_maps2" />
-53-->C:\RETO2DAMAndroid\LajsANDROID\app\src\main\AndroidManifest.xml:36:13-57
-54        <activity
-54-->C:\RETO2DAMAndroid\LajsANDROID\app\src\main\AndroidManifest.xml:37:9-39:59
-55            android:name="com.example.reservas.MapsActivity"
-55-->C:\RETO2DAMAndroid\LajsANDROID\app\src\main\AndroidManifest.xml:38:13-41
-56            android:label="@string/title_activity_maps" />
-56-->C:\RETO2DAMAndroid\LajsANDROID\app\src\main\AndroidManifest.xml:39:13-56
-57        <activity android:name="com.example.reservas.MainActivity" >
-57-->C:\RETO2DAMAndroid\LajsANDROID\app\src\main\AndroidManifest.xml:40:9-46:20
-57-->C:\RETO2DAMAndroid\LajsANDROID\app\src\main\AndroidManifest.xml:40:19-47
-58            <intent-filter>
-58-->C:\RETO2DAMAndroid\LajsANDROID\app\src\main\AndroidManifest.xml:41:13-45:29
-59                <action android:name="android.intent.action.MAIN" />
-59-->C:\RETO2DAMAndroid\LajsANDROID\app\src\main\AndroidManifest.xml:42:17-69
-59-->C:\RETO2DAMAndroid\LajsANDROID\app\src\main\AndroidManifest.xml:42:25-66
-60
-61                <category android:name="android.intent.category.LAUNCHER" />
-61-->C:\RETO2DAMAndroid\LajsANDROID\app\src\main\AndroidManifest.xml:44:17-77
-61-->C:\RETO2DAMAndroid\LajsANDROID\app\src\main\AndroidManifest.xml:44:27-74
-62            </intent-filter>
-63        </activity>
-64        <activity
-64-->C:\RETO2DAMAndroid\LajsANDROID\app\src\main\AndroidManifest.xml:47:9-53:20
-65            android:name="com.example.reservas.FilterActivity"
-65-->C:\RETO2DAMAndroid\LajsANDROID\app\src\main\AndroidManifest.xml:48:13-43
-66            android:parentActivityName="com.example.reservas.MainActivity" >
-66-->C:\RETO2DAMAndroid\LajsANDROID\app\src\main\AndroidManifest.xml:49:13-55
-67            <meta-data
-67-->C:\RETO2DAMAndroid\LajsANDROID\app\src\main\AndroidManifest.xml:50:13-52:49
-68                android:name="android.support.PARENT_ACTIVITY"
-68-->C:\RETO2DAMAndroid\LajsANDROID\app\src\main\AndroidManifest.xml:51:17-63
-69                android:value=".MainActivity" />
-69-->C:\RETO2DAMAndroid\LajsANDROID\app\src\main\AndroidManifest.xml:52:17-46
-70        </activity>
-71        <!-- Needs to be explicitly declared on P+ -->
-72        <uses-library
-72-->[com.google.android.gms:play-services-maps:17.0.0] C:\Users\IN1DM3B_17\.gradle\caches\transforms-2\files-2.1\71410d59386dba98cbe61d29bc62f196\play-services-maps-17.0.0\AndroidManifest.xml:33:9-35:40
-73            android:name="org.apache.http.legacy"
-73-->[com.google.android.gms:play-services-maps:17.0.0] C:\Users\IN1DM3B_17\.gradle\caches\transforms-2\files-2.1\71410d59386dba98cbe61d29bc62f196\play-services-maps-17.0.0\AndroidManifest.xml:34:13-50
-74            android:required="false" />
-74-->[com.google.android.gms:play-services-maps:17.0.0] C:\Users\IN1DM3B_17\.gradle\caches\transforms-2\files-2.1\71410d59386dba98cbe61d29bc62f196\play-services-maps-17.0.0\AndroidManifest.xml:35:13-37
-75
-76        <meta-data
-76-->[com.google.maps.android:android-maps-utils:0.4.4] C:\Users\IN1DM3B_17\.gradle\caches\transforms-2\files-2.1\4fecb78a49341eefb8c3ad50ce033f84\jetified-android-maps-utils-0.4.4\AndroidManifest.xml:8:9-10:69
-77            android:name="com.google.android.gms.version"
-77-->[com.google.maps.android:android-maps-utils:0.4.4] C:\Users\IN1DM3B_17\.gradle\caches\transforms-2\files-2.1\4fecb78a49341eefb8c3ad50ce033f84\jetified-android-maps-utils-0.4.4\AndroidManifest.xml:9:13-58
-78            android:value="@integer/google_play_services_version" />
-78-->[com.google.maps.android:android-maps-utils:0.4.4] C:\Users\IN1DM3B_17\.gradle\caches\transforms-2\files-2.1\4fecb78a49341eefb8c3ad50ce033f84\jetified-android-maps-utils-0.4.4\AndroidManifest.xml:10:13-66
-79
-80        <activity
-80-->[com.google.android.gms:play-services-base:17.0.0] C:\Users\IN1DM3B_17\.gradle\caches\transforms-2\files-2.1\291563c6708268cf4683b088770f2b39\play-services-base-17.0.0\AndroidManifest.xml:23:9-26:75
-81            android:name="com.google.android.gms.common.api.GoogleApiActivity"
-81-->[com.google.android.gms:play-services-base:17.0.0] C:\Users\IN1DM3B_17\.gradle\caches\transforms-2\files-2.1\291563c6708268cf4683b088770f2b39\play-services-base-17.0.0\AndroidManifest.xml:24:13-79
-82            android:exported="false"
-82-->[com.google.android.gms:play-services-base:17.0.0] C:\Users\IN1DM3B_17\.gradle\caches\transforms-2\files-2.1\291563c6708268cf4683b088770f2b39\play-services-base-17.0.0\AndroidManifest.xml:25:13-37
-83            android:theme="@android:style/Theme.Translucent.NoTitleBar" />
-83-->[com.google.android.gms:play-services-base:17.0.0] C:\Users\IN1DM3B_17\.gradle\caches\transforms-2\files-2.1\291563c6708268cf4683b088770f2b39\play-services-base-17.0.0\AndroidManifest.xml:26:13-72
-84    </application>
-85
-86</manifest>
+37        <activity android:name="com.example.reservas.MainActivity" />
+37-->C:\RETO2DAMAndroid\LajsANDROID\app\src\main\AndroidManifest.xml:20:9-59
+37-->C:\RETO2DAMAndroid\LajsANDROID\app\src\main\AndroidManifest.xml:20:19-47
+38        <activity android:name="com.example.reservas.RegistroActivity" />
+38-->C:\RETO2DAMAndroid\LajsANDROID\app\src\main\AndroidManifest.xml:21:9-54
+38-->C:\RETO2DAMAndroid\LajsANDROID\app\src\main\AndroidManifest.xml:21:19-51
+39        <activity android:name="com.example.reservas.ReservaActivity" />
+39-->C:\RETO2DAMAndroid\LajsANDROID\app\src\main\AndroidManifest.xml:22:9-53
+39-->C:\RETO2DAMAndroid\LajsANDROID\app\src\main\AndroidManifest.xml:22:19-50
+40        <!--
+41             The API key for Google Maps-based APIs is defined as a string resource.
+42             (See the file "res/values/google_maps_api.xml").
+43             Note that the API key is linked to the encryption key used to sign the APK.
+44             You need a different API key for each encryption key, including the release key that is used to
+45             sign the APK for publishing.
+46             You can define the keys for the debug and release targets in src/debug/ and src/release/.
+47        -->
+48        <meta-data
+48-->C:\RETO2DAMAndroid\LajsANDROID\app\src\main\AndroidManifest.xml:31:9-33:55
+49            android:name="com.google.android.geo.API_KEY"
+49-->C:\RETO2DAMAndroid\LajsANDROID\app\src\main\AndroidManifest.xml:32:13-58
+50            android:value="@string/google_maps_key" />
+50-->C:\RETO2DAMAndroid\LajsANDROID\app\src\main\AndroidManifest.xml:33:13-52
+51
+52        <activity
+52-->C:\RETO2DAMAndroid\LajsANDROID\app\src\main\AndroidManifest.xml:35:9-37:60
+53            android:name="com.example.reservas.MapsActivity2"
+53-->C:\RETO2DAMAndroid\LajsANDROID\app\src\main\AndroidManifest.xml:36:13-42
+54            android:label="@string/title_activity_maps2" />
+54-->C:\RETO2DAMAndroid\LajsANDROID\app\src\main\AndroidManifest.xml:37:13-57
+55        <activity
+55-->C:\RETO2DAMAndroid\LajsANDROID\app\src\main\AndroidManifest.xml:38:9-40:59
+56            android:name="com.example.reservas.MapsActivity"
+56-->C:\RETO2DAMAndroid\LajsANDROID\app\src\main\AndroidManifest.xml:39:13-41
+57            android:label="@string/title_activity_maps" />
+57-->C:\RETO2DAMAndroid\LajsANDROID\app\src\main\AndroidManifest.xml:40:13-56
+58        <activity android:name="com.example.reservas.LoginActivity" >
+58-->C:\RETO2DAMAndroid\LajsANDROID\app\src\main\AndroidManifest.xml:41:9-47:20
+58-->C:\RETO2DAMAndroid\LajsANDROID\app\src\main\AndroidManifest.xml:41:19-48
+59            <intent-filter>
+59-->C:\RETO2DAMAndroid\LajsANDROID\app\src\main\AndroidManifest.xml:42:13-46:29
+60                <action android:name="android.intent.action.MAIN" />
+60-->C:\RETO2DAMAndroid\LajsANDROID\app\src\main\AndroidManifest.xml:43:17-69
+60-->C:\RETO2DAMAndroid\LajsANDROID\app\src\main\AndroidManifest.xml:43:25-66
+61
+62                <category android:name="android.intent.category.LAUNCHER" />
+62-->C:\RETO2DAMAndroid\LajsANDROID\app\src\main\AndroidManifest.xml:45:17-77
+62-->C:\RETO2DAMAndroid\LajsANDROID\app\src\main\AndroidManifest.xml:45:27-74
+63            </intent-filter>
+64        </activity>
+65        <activity
+65-->C:\RETO2DAMAndroid\LajsANDROID\app\src\main\AndroidManifest.xml:48:9-54:20
+66            android:name="com.example.reservas.FilterActivity"
+66-->C:\RETO2DAMAndroid\LajsANDROID\app\src\main\AndroidManifest.xml:49:13-43
+67            android:parentActivityName="com.example.reservas.MainActivity" >
+67-->C:\RETO2DAMAndroid\LajsANDROID\app\src\main\AndroidManifest.xml:50:13-55
+68            <meta-data
+68-->C:\RETO2DAMAndroid\LajsANDROID\app\src\main\AndroidManifest.xml:51:13-53:49
+69                android:name="android.support.PARENT_ACTIVITY"
+69-->C:\RETO2DAMAndroid\LajsANDROID\app\src\main\AndroidManifest.xml:52:17-63
+70                android:value=".MainActivity" />
+70-->C:\RETO2DAMAndroid\LajsANDROID\app\src\main\AndroidManifest.xml:53:17-46
+71        </activity>
+72        <!-- Needs to be explicitly declared on P+ -->
+73        <uses-library
+73-->[com.google.android.gms:play-services-maps:17.0.0] C:\Users\IN1DM3B_17\.gradle\caches\transforms-2\files-2.1\71410d59386dba98cbe61d29bc62f196\play-services-maps-17.0.0\AndroidManifest.xml:33:9-35:40
+74            android:name="org.apache.http.legacy"
+74-->[com.google.android.gms:play-services-maps:17.0.0] C:\Users\IN1DM3B_17\.gradle\caches\transforms-2\files-2.1\71410d59386dba98cbe61d29bc62f196\play-services-maps-17.0.0\AndroidManifest.xml:34:13-50
+75            android:required="false" />
+75-->[com.google.android.gms:play-services-maps:17.0.0] C:\Users\IN1DM3B_17\.gradle\caches\transforms-2\files-2.1\71410d59386dba98cbe61d29bc62f196\play-services-maps-17.0.0\AndroidManifest.xml:35:13-37
+76
+77        <meta-data
+77-->[com.google.maps.android:android-maps-utils:0.4.4] C:\Users\IN1DM3B_17\.gradle\caches\transforms-2\files-2.1\4fecb78a49341eefb8c3ad50ce033f84\jetified-android-maps-utils-0.4.4\AndroidManifest.xml:8:9-10:69
+78            android:name="com.google.android.gms.version"
+78-->[com.google.maps.android:android-maps-utils:0.4.4] C:\Users\IN1DM3B_17\.gradle\caches\transforms-2\files-2.1\4fecb78a49341eefb8c3ad50ce033f84\jetified-android-maps-utils-0.4.4\AndroidManifest.xml:9:13-58
+79            android:value="@integer/google_play_services_version" />
+79-->[com.google.maps.android:android-maps-utils:0.4.4] C:\Users\IN1DM3B_17\.gradle\caches\transforms-2\files-2.1\4fecb78a49341eefb8c3ad50ce033f84\jetified-android-maps-utils-0.4.4\AndroidManifest.xml:10:13-66
+80
+81        <activity
+81-->[com.google.android.gms:play-services-base:17.0.0] C:\Users\IN1DM3B_17\.gradle\caches\transforms-2\files-2.1\291563c6708268cf4683b088770f2b39\play-services-base-17.0.0\AndroidManifest.xml:23:9-26:75
+82            android:name="com.google.android.gms.common.api.GoogleApiActivity"
+82-->[com.google.android.gms:play-services-base:17.0.0] C:\Users\IN1DM3B_17\.gradle\caches\transforms-2\files-2.1\291563c6708268cf4683b088770f2b39\play-services-base-17.0.0\AndroidManifest.xml:24:13-79
+83            android:exported="false"
+83-->[com.google.android.gms:play-services-base:17.0.0] C:\Users\IN1DM3B_17\.gradle\caches\transforms-2\files-2.1\291563c6708268cf4683b088770f2b39\play-services-base-17.0.0\AndroidManifest.xml:25:13-37
+84            android:theme="@android:style/Theme.Translucent.NoTitleBar" />
+84-->[com.google.android.gms:play-services-base:17.0.0] C:\Users\IN1DM3B_17\.gradle\caches\transforms-2\files-2.1\291563c6708268cf4683b088770f2b39\play-services-base-17.0.0\AndroidManifest.xml:26:13-72
+85    </application>
+86
+87</manifest>

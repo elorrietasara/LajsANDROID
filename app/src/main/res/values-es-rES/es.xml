@@ -12,22 +12,17 @@
     <string name="Tipo">Tipo</string>
     <string-array name="spinner">
         <item>Elegir...</item>
-        <item>Montes y Valles vascos</item>
-        <item>Bilbao</item>
-        <item>Vitoria-Gasteiz</item>
-        <item>Costa Vasca</item>
-
-        <item>San Sebastián</item>
-        <item>Rioja Alavesa</item>
-
+        <item>Bizkaia</item>
+        <item>Gipuzkoa</item>
+        <item>Araba/Álava</item>
 
     </string-array>
     <string-array name="spinner2">
         <item>Elegir...</item>
-        <item>Albergue</item>
+        <item>Albergues</item>
         <item>Agroturismos</item>
         <item>Casas Rurales</item>
-        <item>Camping</item>
+        <item>Campings</item>
 
 
     </string-array>

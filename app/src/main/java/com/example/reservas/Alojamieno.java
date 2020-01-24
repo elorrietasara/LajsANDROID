@@ -11,6 +11,16 @@ public class Alojamieno {
     String localidad;
     String descripcion;
 
+    public String getDireccion() {
+        return direccion;
+    }
+
+    public void setDireccion(String direccion) {
+        this.direccion = direccion;
+    }
+
+    String direccion;
+
 
 
     Integer capacidad;

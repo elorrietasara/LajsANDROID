@@ -3,9 +3,6 @@
     xmlns:android="http://schemas.android.com/apk/res/android">
 
     <item
-        android:id="@+id/idioma"
-        android:title="IDIOMA" />
-    <item
         android:id="@+id/mapa"
         android:icon="@drawable/map"
         android:title="Item"
@@ -14,10 +11,5 @@
         android:id="@+id/filtros"
         android:icon="@drawable/filtrar"
         android:title="FILTROS"
-        app:showAsAction="always" />
-    <item
-        android:id="@+id/user"
-        android:icon="@drawable/user"
-        android:title="Item"
         app:showAsAction="always" />
 </menu>
