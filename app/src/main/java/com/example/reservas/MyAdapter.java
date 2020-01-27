@@ -99,7 +99,7 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.ViewHolder> {
                 alertDialogBuilder.setPositiveButton("Ok", new DialogInterface.OnClickListener() {
                     public void onClick(DialogInterface dialog, int id) {
 
-                        Toast.makeText(view.getContext(), "" + calendar.getSelectedDates(), Toast.LENGTH_LONG).show();
+                        //Toast.makeText(view.getContext(), "" + calendar.getSelectedDates(), Toast.LENGTH_LONG).show();
                         // and display the username on main activity layout
 
                         new SweetAlertDialog(view.getContext(), SweetAlertDialog.SUCCESS_TYPE)
@@ -110,6 +110,7 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.ViewHolder> {
                                 intent.putExtra("Nombre", userModelList.get(position).getNombre());
                                 intent.putExtra("FechaE",calendar.getSelectedDates().get(0).toString());
                                 intent.putExtra("FechaS",calendar.getSelectedDates().get(calendar.getSelectedDates().size()-1).toString() );
+                                intent.putExtra("Descripcion", userModelList.get(position).getDescripcion());
 
                                 view.getContext().startActivity(intent);
                                 ConexionBBDD connectMySql = new ConexionBBDD();
@@ -137,7 +138,7 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.ViewHolder> {
         holder.verMapa.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Toast.makeText(view.getContext(),"latlon"+userModelList.get(position).getLat()+"  "+userModelList.get(position).getLon()+"  "+  holder.getLayoutPosition(),Toast.LENGTH_LONG).show();
+                //Toast.makeText(view.getContext(),"latlon"+userModelList.get(position).getLat()+"  "+userModelList.get(position).getLon()+"  "+  holder.getLayoutPosition(),Toast.LENGTH_LONG).show();
                 Intent intent = new Intent(view.getContext(), MapsActivity2.class);
                 intent.putExtra("LATITUDE", userModelList.get(position).getLat());
                 intent.putExtra("LONGITUDE", userModelList.get(position).getLon());
