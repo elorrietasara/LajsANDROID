@@ -3,7 +3,9 @@ package com.example.reservas;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.util.Base64;
@@ -60,7 +62,7 @@ public class LoginActivity extends AppCompatActivity {
 
 
     public class ConexionUsuarios  extends AsyncTask<String, Void, ArrayList<String>> {
-
+        Integer id;
         private static final String url = "jdbc:mysql://192.168.101.35:3306/alojamientos?serverTimezone=UTC";
         private static final String user = "lajs";
         private static final String password = "lajs";
@@ -94,6 +96,7 @@ public class LoginActivity extends AppCompatActivity {
                     String resultado = "";
                     while (rs.next() && salir == false) {
 
+
                         if (!rs.getString("username").equals(stirn[0])) {
                            /* datos.add("");
                             datos.add("");*/
@@ -104,6 +107,7 @@ public class LoginActivity extends AppCompatActivity {
                             if (contrasena.equalsIgnoreCase(rs.getString("password"))) {
                                 datos.add(stirn[0]);
                                 datos.add(contrasena);
+                                id=rs.getInt("idUsr");
 
 
 
@@ -142,6 +146,11 @@ public class LoginActivity extends AppCompatActivity {
                         .setContentText("Datos incorrectos")
                         .show();
             }else{
+
+                SharedPreferences preferencias=getSharedPreferences("datosUsu",Context.MODE_PRIVATE);
+                SharedPreferences.Editor editor=preferencias.edit();
+                editor.putInt("idUsu", id);
+                editor.commit();
                 Intent intent = new Intent(LoginActivity.this, MainActivity.class);
                 startActivity(intent);
                 finish();

@@ -14,6 +14,7 @@ import android.location.LocationManager;
 import android.os.Bundle;
 import android.os.Looper;
 import android.provider.Settings;
+import android.widget.SeekBar;
 import android.widget.Toast;
 import com.google.android.gms.location.FusedLocationProviderClient;
 import com.google.android.gms.location.LocationCallback;
@@ -44,12 +45,16 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
     double lon;
     double lat;
     FusedLocationProviderClient mFusedLocationClient;
+    SeekBar seekbar;
+    Integer zoom=5;
+    LatLng sydney;
 
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_maps);
+         seekbar = (SeekBar) findViewById(R.id.seekBar);
         mFusedLocationClient = LocationServices.getFusedLocationProviderClient(this);
         getLastLocation();
         // Obtain the SupportMapFragment and get notified when the map is ready to be used.
@@ -57,6 +62,25 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
         mapFragment.getMapAsync(this);
 
 
+        seekbar.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
+            @Override
+            public void onProgressChanged(SeekBar seekBar, int i, boolean b) {
+
+                mMap.animateCamera(CameraUpdateFactory.newLatLngZoom(sydney, zoom+i));
+
+
+            }
+
+            @Override
+            public void onStartTrackingTouch(SeekBar seekBar) {
+
+            }
+
+            @Override
+            public void onStopTrackingTouch(SeekBar seekBar) {
+
+            }
+        });
 
 
 
@@ -78,14 +102,12 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
                                     lat=location.getLatitude();
                                     lon=location.getLongitude();
 
-                                    LatLng sydney = new LatLng(lat, lon);
+                                     sydney = new LatLng(lat, lon);
                                     mMap.addMarker(new MarkerOptions().position(sydney).title("My Ubicación").icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_GREEN)));
-                                    mMap.animateCamera(CameraUpdateFactory.newLatLngZoom(sydney, 15.0f));
-                                   /* Circle circle = mMap.addCircle(new CircleOptions()
-                                            .center(new LatLng(lat, lon))
-                                            .radius(100)
-                                            .strokeColor(Color.RED)
-                                            .fillColor(Color.BLUE));*/
+                                    mMap.animateCamera(CameraUpdateFactory.newLatLngZoom(sydney, zoom));
+
+
+
 
 
 
@@ -203,7 +225,7 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
                 mMap.addMarker(new MarkerOptions().position(sydney).title(name));
                 mMap.setMapType(mMap.MAP_TYPE_NORMAL);
 
-                mMap.moveCamera(CameraUpdateFactory.newLatLng(sydney));
+
 
             }
         } catch (JSONException e) {

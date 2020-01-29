@@ -799,6 +799,7 @@ drawable account
 drawable amu_bubble_mask
 drawable amu_bubble_shadow
 drawable blue_button_background
+drawable borde
 drawable button
 drawable calendar_bg_selector
 drawable calendar_text_selector
@@ -824,6 +825,7 @@ drawable common_google_signin_btn_text_light_focused
 drawable common_google_signin_btn_text_light_normal
 drawable common_google_signin_btn_text_light_normal_background
 drawable day_text_color
+drawable derecho
 drawable dialog_background
 drawable dialog_background_dark
 drawable download
@@ -1011,6 +1013,7 @@ id imageView
 id imageView2
 id imageView3
 id imageView4
+id imageView5
 id info
 id invisible
 id italic
@@ -1048,6 +1051,8 @@ id progress_dialog
 id progress_horizontal
 id provincia
 id radio
+id res
+id reservas
 id right
 id right_icon
 id right_side
@@ -1056,6 +1061,7 @@ id screen
 id scrollIndicatorDown
 id scrollIndicatorUp
 id scrollView
+id searchView
 id search_badge
 id search_bar
 id search_button
@@ -1066,6 +1072,7 @@ id search_mag_icon
 id search_plate
 id search_src_text
 id search_voice_btn
+id seekBar
 id seekBar2
 id select_dialog_listview
 id shortcut
@@ -1117,6 +1124,10 @@ id textView20
 id textView21
 id textView22
 id textView23
+id textView24
+id textView25
+id textView26
+id textView27
 id textView3
 id textView4
 id textView5
@@ -1183,6 +1194,7 @@ layout activity_login
 layout activity_main
 layout activity_maps
 layout activity_maps2
+layout activity_mis_reservas
 layout activity_registro
 layout activity_reserva
 layout adapteraloj
@@ -1199,6 +1211,7 @@ layout notification_template_icon_group
 layout notification_template_part_chronometer
 layout notification_template_part_time
 layout reservar
+layout reservasusuario
 layout select_dialog_item_material
 layout select_dialog_multichoice_material
 layout select_dialog_singlechoice_material

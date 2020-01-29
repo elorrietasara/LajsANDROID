@@ -106,7 +106,7 @@ public class RegistroActivity extends AppCompatActivity {
 
 
         else{
-            
+
             Intent intent = new Intent(RegistroActivity.this, LoginActivity.class);
             new registroUsuarioBBDD().execute(nombre.getText().toString(),apellido.getText().toString(),dni.getText().toString(),usuario.getText().toString(),nacimiento.getText().toString(),contraseña.getText().toString());
             startActivity(intent);

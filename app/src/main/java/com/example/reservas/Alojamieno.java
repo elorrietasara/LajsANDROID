@@ -1,7 +1,15 @@
 package com.example.reservas;
 
 public class Alojamieno {
+    public Integer getId() {
+        return id;
+    }
 
+    public void setId(Integer id) {
+        this.id = id;
+    }
+
+    Integer id;
     String nombre;
     String telefono;
     String web;
@@ -29,7 +37,7 @@ public class Alojamieno {
 
     }
 
-    public Alojamieno(String nombre, String telefono,String web, Double lat, Double lon,String descripcion,String localidad, String tipo, Integer capacidad) {
+    public Alojamieno(String nombre, String telefono,String web, Double lat, Double lon,String descripcion,String localidad, String tipo, Integer capacidad, Integer id) {
         this.nombre = nombre;
         this.telefono = telefono;
         this.web = web;
@@ -39,6 +47,7 @@ public class Alojamieno {
         this.localidad=localidad;
         this.tipo=tipo;
         this.capacidad=capacidad;
+        this.id=id;
 
     }
     public Integer getCapacidad() {

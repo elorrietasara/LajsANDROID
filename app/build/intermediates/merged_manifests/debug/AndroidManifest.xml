@@ -34,6 +34,7 @@
         android:supportsRtl="true"
         android:testOnly="true"
         android:theme="@style/Theme.AppCompat.DayNight" >
+        <activity android:name="com.example.reservas.MisReservasActivity" />
         <activity android:name="com.example.reservas.MainActivity" />
         <activity android:name="com.example.reservas.RegistroActivity" />
         <activity android:name="com.example.reservas.ReservaActivity" />

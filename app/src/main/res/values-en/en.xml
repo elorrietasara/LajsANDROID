@@ -16,10 +16,10 @@
     </string-array>
     <string-array name="spinner2">
         <item>Choose...</item>
-        <item>Albergue</item>
+        <item>Albergues</item>
         <item>Agroturismos</item>
         <item>Casas Rurales</item>
-        <item>Camping</item>
+        <item>Campings</item>
 
 
     </string-array>

@@ -1,9 +1,11 @@
 package com.example.reservas;
 
 
+import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
 
+import android.content.SharedPreferences;
 import android.graphics.Typeface;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -19,9 +21,11 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.google.android.gms.maps.GoogleMap;
 import com.savvi.rangedatepicker.CalendarPickerView;
 
+import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.Date;
 import java.util.List;
+import java.util.Locale;
 
 import cn.pedant.SweetAlert.SweetAlertDialog;
 
@@ -29,6 +33,7 @@ import cn.pedant.SweetAlert.SweetAlertDialog;
 public class MyAdapter extends RecyclerView.Adapter<MyAdapter.ViewHolder> {
 
     private List<Alojamieno> userModelList;
+    private List<Alojamieno> arraylist;
 
 
     GoogleMap map;
@@ -36,8 +41,11 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.ViewHolder> {
     Double lon;
     ConexionBBDD con = new ConexionBBDD();
 
+
     public MyAdapter(List<Alojamieno> userModelList) {
         this.userModelList = userModelList;
+        this.arraylist=new ArrayList<>();
+        this.arraylist.addAll(userModelList);
     }
 
     @Override
@@ -101,7 +109,10 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.ViewHolder> {
 
                         //Toast.makeText(view.getContext(), "" + calendar.getSelectedDates(), Toast.LENGTH_LONG).show();
                         // and display the username on main activity layout
+                        SharedPreferences sh = view.getContext().getSharedPreferences("datosUsu", Context.MODE_PRIVATE);
 
+
+                        final Integer idUser = sh.getInt("idUsu", 0);
                         new SweetAlertDialog(view.getContext(), SweetAlertDialog.SUCCESS_TYPE)
                                 .setTitleText("Reservado!").setConfirmClickListener(new SweetAlertDialog.OnSweetClickListener() {
                             @Override
@@ -115,7 +126,7 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.ViewHolder> {
                                 view.getContext().startActivity(intent);
                                 ConexionBBDD connectMySql = new ConexionBBDD();
 
-                                connectMySql.execute(calendar.getSelectedDates().get(0),calendar.getSelectedDates().get(calendar.getSelectedDates().size()-1),"1","1");
+                                connectMySql.execute(calendar.getSelectedDates().get(0),calendar.getSelectedDates().get(calendar.getSelectedDates().size()-1),userModelList.get(position).getId(),idUser);
                                 //connectMySql.insertar(calendar.getSelectedDates().get(0),calendar.getSelectedDates().get(calendar.getSelectedDates().size()-1),1,1);
 
                                 sweetAlertDialog.dismiss();
@@ -184,12 +195,13 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.ViewHolder> {
             provincia=v.findViewById(R.id.provincia);
             direccion=v.findViewById(R.id.direcc);
 
-
-
-
-
         }
 
 
+
+
+
     }
+    // Filter Class
+
 }

@@ -54,8 +54,8 @@ public class ConexionBBDD   extends AsyncTask<Object, Void, String> {
 
             ps.setDate(1,SQLdate1);
             ps.setDate(2,SQLdate2);
-            ps.setInt(3,Integer.parseInt((String)stirn[2]));
-            ps.setInt(4,Integer.parseInt((String)stirn[3]));
+            ps.setInt(3,(Integer)stirn[2]);
+            ps.setInt(4,(Integer)stirn[3]);
             ps.executeUpdate();
 
             ps.close();

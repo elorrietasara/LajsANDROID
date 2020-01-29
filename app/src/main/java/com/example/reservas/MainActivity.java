@@ -16,6 +16,7 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.SearchView;
 import android.widget.SeekBar;
 import android.widget.Spinner;
 import android.widget.TextView;
@@ -28,6 +29,7 @@ import java.sql.ResultSet;
 import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Locale;
 
 import jp.wasabeef.recyclerview.animators.FadeInDownAnimator;
 
@@ -37,8 +39,11 @@ public class MainActivity extends AppCompatActivity {
     private RecyclerView.Adapter mAdapter;
     List<Alojamieno> mDataset;
     List<Alojamieno> aux= new ArrayList<Alojamieno>();
+    List<Alojamieno> arraylist= new ArrayList<Alojamieno>();
     List<String> nombres= new ArrayList<String>();
+
     String usuario;
+    SearchView searchView;
 
 
     @Override
@@ -47,31 +52,39 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         ConexionAlojamientos conexionAlojamientos= new ConexionAlojamientos();
 
-
-
-
-
-
-
-
-
-        //creamos la vista de la lista
         recyclerView = (RecyclerView) findViewById(R.id.my_recyclerview);
+        searchView=findViewById(R.id.searchView);
+        arraylist=new ArrayList<>();
 
         new ConexionAlojamientos().execute();
 
 
-        // use this setting to improve performance if you know that changes
-        // in content do not change the layout size of the RecyclerView
+
         recyclerView.setHasFixedSize(true);
         recyclerView.setItemAnimator(new FadeInDownAnimator());
         recyclerView.addItemDecoration(new DividerItemDecoration(this, LinearLayoutManager.VERTICAL));
-
-        // use a linear layout manager
         layoutManager = new LinearLayoutManager(this);
-
         recyclerView.setLayoutManager(layoutManager);
         mDataset = new ArrayList<Alojamieno>();
+
+        mAdapter = new MyAdapter(mDataset);
+        mAdapter.notifyDataSetChanged();
+        recyclerView.setAdapter(mAdapter);
+
+        //BUSQUEDA DE ALOJAMIENTOS POR TERMINOS(NOMBRE DEL ALOJAMIENTO O PROVINCIA
+        searchView.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
+            @Override
+            public boolean onQueryTextSubmit(String s) {
+                return false;
+            }
+
+            @Override
+            public boolean onQueryTextChange(String s) {
+                         filter(s);
+
+                        return false;
+            }
+        });
 
        /* try {
             JSONArray jArray = new JSONArray(readJSONFromAsset());
@@ -91,13 +104,26 @@ public class MainActivity extends AppCompatActivity {
         } catch (JSONException e) {
             e.printStackTrace();
         }*/
-        mAdapter = new MyAdapter(mDataset);
-        mAdapter.notifyDataSetChanged();
-        recyclerView.setAdapter(mAdapter);
+
 
     }
+    //FILTRO DE BUSQUEDA
+    public void filter(String charText) {
+        charText = charText.toLowerCase(Locale.getDefault());
+        mDataset.clear();
+        if (charText.length() == 0) {
+            mDataset.addAll(aux);
+        } else {
+            for (Alojamieno wp : arraylist) {
+                if (wp.getNombre().toLowerCase(Locale.getDefault()).contains(charText) || wp.getLocalidad().toLowerCase(Locale.getDefault()).contains(charText)) {
+                    mDataset.add(wp);
+                }
+            }
+        }
+        mAdapter.notifyDataSetChanged();
+    }
 
-
+    /*
     public String readJSONFromAsset() {
         String json = null;
         String jason = "alojR.json";
@@ -113,7 +139,7 @@ public class MainActivity extends AppCompatActivity {
             return null;
         }
         return json;
-    }
+    }*/
 
 
     @Override
@@ -127,10 +153,18 @@ public class MainActivity extends AppCompatActivity {
     public boolean onOptionsItemSelected(MenuItem item) {
         Intent intent;
         switch (item.getItemId()) {
+            //MOSTRAR LAS RESERVAS QUE HA REALIZADO EL USUARIO
+            case R.id.reservas:
+                intent = new Intent(this, MisReservasActivity.class);
+                startActivity(intent);
+
+                break;
+             //MUESTRA EL MAPA GENERAL CON TODOS LOS ALOJAMIENTOS
             case R.id.mapa:
                 intent = new Intent(this, MapsActivity.class);
                 startActivity(intent);
                 break;
+             //FILTRO DE LOS ALOJAMIENTOS SEGUN PROVINCIA TIPO O CAPACIDAD
             case R.id.filtros:
                 LayoutInflater layoutinflater = LayoutInflater.from(this);
                 final View promptUserView = layoutinflater.inflate(R.layout.activity_filter, null);
@@ -179,53 +213,46 @@ public class MainActivity extends AppCompatActivity {
                         for (int i = 0; i < aux.size(); i++) {
                             String loc = aux.get(i).getLocalidad().toString();
 
-                            if (provincia.equals("Elegir...") && tipo.equals("Elegir...") && Integer.parseInt(capacidad.getText().toString()) == 0) {
+                            if ((provincia.equals("Elegir...")|| provincia.equals("Choose...") ) && (tipo.equals("Elegir...")||tipo.equals("Choose...")) && Integer.parseInt(capacidad.getText().toString()) == 0) {
                                 mDataset.add(aux.get(i));
                             } else {
 
                                 mDataset.add(aux.get(i));
-                                if (!tipo.equals("Elegir...") && !provincia.equals("Elegir...") && Integer.parseInt(capacidad.getText().toString()) == 0) {
+                                if ((!tipo.equals("Elegir...")&& !tipo.equals("Choose...")) && (!provincia.equals("Elegir...")&& !provincia.equals("Choose...")) && Integer.parseInt(capacidad.getText().toString()) == 0) {
                                     //mDataset.add(aux.get(i));
                                     if (!loc.replace(" ", "").contains(provincia.replace(" ", "")) || mDataset.size() != 0 && !mDataset.get(mDataset.size() - 1).getTipo().toString().equals(tipo)) {
                                         mDataset.remove(mDataset.size() - 1);
                                     }
-                                  /*  if ( mDataset.size() != 0 && !mDataset.get(mDataset.size() - 1).getTipo().toString().equals(tipo) ) {
-                                        mDataset.remove(mDataset.size() - 1);
 
-                                    }*/
-                                    /*if (Integer.parseInt(aux.get(i).getCapacidad().toString()) > Integer.parseInt(capacidad.getText().toString()) && mDataset.size() != 0) {
-                                        mDataset.remove(mDataset.size() - 1);
-
-                                    }*/
-                                } else if (tipo.equals("Elegir...") && mDataset.size() != 0 && Integer.parseInt(capacidad.getText().toString()) != 0 && provincia.equals("Elegir...")) {
+                                } else if ((tipo.equals("Elegir...")||tipo.equals("Choose...")) && mDataset.size() != 0 && Integer.parseInt(capacidad.getText().toString()) != 0 && (provincia.equals("Elegir...")|| provincia.equals("Elegir..."))) {
                                     //mDataset.add(aux.get(i));
                                     if (Integer.parseInt(aux.get(i).getCapacidad().toString()) > Integer.parseInt(capacidad.getText().toString())) {
                                         mDataset.remove(mDataset.size() - 1);
 
                                     }
 
-                                } else if (!tipo.equals("Elegir...") && mDataset.size() != 0 && Integer.parseInt(capacidad.getText().toString()) == 0 && provincia.equals("Elegir...")) {
+                                } else if ((!tipo.equals("Elegir...")&& !tipo.equals("Choose...")) && mDataset.size() != 0 && Integer.parseInt(capacidad.getText().toString()) == 0 && (provincia.equals("Elegir...")||provincia.equals("Choose..."))) {
                                     //mDataset.add(aux.get(i));
                                     if (!mDataset.get(mDataset.size() - 1).getTipo().toString().equals(tipo)) {
                                         mDataset.remove(mDataset.size() - 1);
 
                                     }
-                                } else if (tipo.equals("Elegir...") && mDataset.size() != 0 && Integer.parseInt(capacidad.getText().toString()) == 0 && !provincia.equals("Elegir...")) {
+                                } else if ((tipo.equals("Elegir...")|| tipo.equals("Choose...") )&& mDataset.size() != 0 && Integer.parseInt(capacidad.getText().toString()) == 0 && (!provincia.equals("Elegir...")&& !provincia.equals("Choose..."))) {
                                     // mDataset.add(aux.get(i));
                                     if (!loc.replace(" ", "").contains(provincia.replace(" ", ""))) {
                                         mDataset.remove(mDataset.size() - 1);
                                     }
-                                } else if (!tipo.equals("Elegir...") && mDataset.size() != 0 && Integer.parseInt(capacidad.getText().toString()) != 0 && !provincia.equals("Elegir...")) {
+                                } else if ((!tipo.equals("Elegir...")&& !tipo.equals("Choose...") ) && mDataset.size() != 0 && Integer.parseInt(capacidad.getText().toString()) != 0 && (!provincia.equals("Elegir...")&& !provincia.equals("Choose..."))) {
                                     // mDataset.add(aux.get(i));
                                     if (!loc.replace(" ", "").contains(provincia.replace(" ", "")) || !mDataset.get(mDataset.size() - 1).getTipo().toString().equals(tipo) || Integer.parseInt(aux.get(i).getCapacidad().toString()) > Integer.parseInt(capacidad.getText().toString())) {
                                         mDataset.remove(mDataset.size() - 1);
                                     }
-                                } else if (!tipo.equals("Elegir...") && mDataset.size() != 0 && Integer.parseInt(capacidad.getText().toString()) != 0 && provincia.equals("Elegir...")) {
+                                } else if ((!tipo.equals("Elegir...")&& !tipo.equals("Choose...")) && mDataset.size() != 0 && Integer.parseInt(capacidad.getText().toString()) != 0 && (provincia.equals("Elegir...")||provincia.equals("Choose..."))) {
                                     // mDataset.add(aux.get(i));
                                     if (!mDataset.get(mDataset.size() - 1).getTipo().toString().equals(tipo) || Integer.parseInt(aux.get(i).getCapacidad().toString()) > Integer.parseInt(capacidad.getText().toString())) {
                                         mDataset.remove(mDataset.size() - 1);
                                     }
-                                } else if (tipo.equals("Elegir...") || mDataset.size() != 0 || Integer.parseInt(capacidad.getText().toString()) != 0 || !provincia.equals("Elegir...")) {
+                                } else if ((tipo.equals("Elegir...")||tipo.equals("Choose...") ) || mDataset.size() != 0 || Integer.parseInt(capacidad.getText().toString()) != 0 || (!provincia.equals("Elegir...")&& !provincia.equals("Choose...") )) {
                                     // mDataset.add(aux.get(i));
                                     if (!loc.replace(" ", "").contains(provincia.replace(" ", "")) && Integer.parseInt(aux.get(i).getCapacidad().toString()) > Integer.parseInt(capacidad.getText().toString())) {
                                         mDataset.remove(mDataset.size() - 1);
@@ -245,42 +272,6 @@ public class MainActivity extends AppCompatActivity {
 
 
                 break;
-           /* case R.id.user:
-                LayoutInflater layoutinflater2 = LayoutInflater.from(this);
-                //final View promptUserView2 = layoutinflater2.inflate(R.layout.login, null);
-
-                final AlertDialog.Builder alertDialogBuilder2 = new AlertDialog.Builder(this);
-
-               // alertDialogBuilder2.setView(promptUserView2);
-                alertDialogBuilder2.setTitle("Login");
-                final AlertDialog alertDialog2 = alertDialogBuilder2.create();
-                alertDialog2.setCancelable(false);
-                alertDialog2.show();
-               /Button boton2 = (Button) promptUserView2.findViewById(R.id.button3);
-                final EditText usu = (EditText) promptUserView2.findViewById(R.id.editText);
-                final EditText contra = (EditText) promptUserView2.findViewById(R.id.editText2);
-                boton2.setOnClickListener(new View.OnClickListener() {
-                    @Override
-                    public void onClick(View view) {
-                        if (usu.getText().toString().equals("") && contra.getText().toString().equals("")) {
-                            final AlertDialog.Builder builder = new AlertDialog.Builder(promptUserView2.getContext());
-                            builder.setTitle("ERROR");
-                            builder.setMessage("¡Introduzca los datos!");
-                            final AlertDialog ad = builder.create();
-                            ad.show();
-
-                        } else {
-                           login(usu, contra).toString();
-                           alertDialog2.dismiss();
-                        }
-
-                    }
-                });
-                break;
-            case R.id.idioma:
-
-
-            break;*/
 
         }
         return super.onOptionsItemSelected(item);
@@ -293,7 +284,7 @@ public class MainActivity extends AppCompatActivity {
 
 
 
-
+    //SEW CONECTA CON LA BBDD Y RECOGE TODOS LOS ALOJAMIENTOS
     public class ConexionAlojamientos  extends AsyncTask<Void, Void, List<Alojamieno>> {
 
         private static final String url = "jdbc:mysql://192.168.101.35:3306/alojamientos?serverTimezone=UTC";
@@ -326,6 +317,7 @@ public class MainActivity extends AppCompatActivity {
                     resultado += rs.getString("nombre");
                     resultado += rs.getString("telefono") + "\n";
                     Alojamieno alojamiento = new Alojamieno();
+                    alojamiento.setId(rs.getInt("idAloj"));
                     alojamiento.setNombre(rs.getString("nombre"));
                     alojamiento.setLat(rs.getDouble("latitud"));
                     alojamiento.setLon(rs.getDouble("longitud"));
@@ -335,6 +327,7 @@ public class MainActivity extends AppCompatActivity {
                     alojamiento.setLocalidad(rs.getString("provincia"));
                     alojamiento.setTipo(rs.getString("tipo"));
                     alojamiento.setDireccion(rs.getString("direccion"));
+                    alojamiento.setCapacidad(rs.getInt("capacidad"));
                     aux.add(alojamiento);
                     nombres.add(alojamiento);
                     i += 1;
@@ -360,6 +353,7 @@ public class MainActivity extends AppCompatActivity {
 
             // Añadir elementos nuevos
             mDataset.addAll(lista);
+            arraylist.addAll(lista);
             mAdapter.notifyDataSetChanged();
 
             // Parar la animación del indicador
