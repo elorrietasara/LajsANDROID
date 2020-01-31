@@ -9,16 +9,16 @@
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/my_recyclerview"
-        android:layout_width="535dp"
-        android:layout_height="801dp"
+        android:layout_width="391dp"
+        android:layout_height="763dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/searchView" />
 
     <SearchView
         android:id="@+id/searchView"
-        android:layout_width="537dp"
-        android:layout_height="48dp"
-        android:background="@color/gray_btn_bg_color"
+        android:layout_width="392dp"
+        android:layout_height="42dp"
+        android:background="#E7E1E1"
         android:queryHint="Buscar"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />

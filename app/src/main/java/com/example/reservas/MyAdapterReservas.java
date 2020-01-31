@@ -9,8 +9,11 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Locale;
 
 public class MyAdapterReservas extends RecyclerView.Adapter<MyAdapterReservas.ViewHolder> {
 
@@ -40,12 +43,18 @@ public class MyAdapterReservas extends RecyclerView.Adapter<MyAdapterReservas.Vi
 
     @Override
     public void onBindViewHolder(@NonNull MyAdapterReservas.ViewHolder holder, int position) {
+        SimpleDateFormat dt1 = new SimpleDateFormat("yyy-MM-dd HH:mm:ss.S", Locale.ENGLISH);
+        SimpleDateFormat dt2 = new SimpleDateFormat("dd/MM/yyyy");
 
 
+            holder.aloj.setText(datoReserva.get(position).getNombre());
+        try {
+            holder.fE.setText(dt2.format(dt1.parse(datoReserva.get(position).getFe())));
+            holder.fS.setText(dt2.format(dt1.parse(datoReserva.get(position).getFs())));
+        } catch (ParseException e) {
+            e.printStackTrace();
+        }
 
-            holder.aloj.setText(holder.aloj.getText()+"\n"+datoReserva.get(position).getNombre());
-            holder.fE.setText(holder.fE.getText()+"\n"+datoReserva.get(position).getFe().substring(0,10));
-            holder.fS.setText(holder.fS.getText()+"\n"+datoReserva.get(position).getFs().substring(0,10));
 
     }
 
@@ -62,9 +71,9 @@ public class MyAdapterReservas extends RecyclerView.Adapter<MyAdapterReservas.Vi
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
 
-            aloj=itemView.findViewById(R.id.textView24);
-            fE=itemView.findViewById(R.id.textView25);
-            fS=itemView.findViewById(R.id.textView26);
+            aloj=itemView.findViewById(R.id.textView28);
+            fE=itemView.findViewById(R.id.textView29);
+            fS=itemView.findViewById(R.id.textView30);
         }
     }
 }

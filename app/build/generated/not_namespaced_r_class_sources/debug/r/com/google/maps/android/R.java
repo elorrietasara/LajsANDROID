@@ -91,9 +91,9 @@ public final class R {
         public static final int satellite = 0x7f0800bb;
         public static final int standard = 0x7f0800db;
         public static final int terrain = 0x7f0800ea;
-        public static final int webview = 0x7f080115;
-        public static final int wide = 0x7f080116;
-        public static final int window = 0x7f080117;
+        public static final int webview = 0x7f080118;
+        public static final int wide = 0x7f080119;
+        public static final int window = 0x7f08011a;
     }
     public static final class integer {
         private integer() {}

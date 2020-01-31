@@ -5,8 +5,11 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
 import android.widget.TextView;
 
+import java.io.Console;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
+import java.util.Date;
+import java.util.Locale;
 
 public class ReservaActivity extends AppCompatActivity {
     TextView nombre;
@@ -19,7 +22,7 @@ public class ReservaActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_reserva);
 
-        SimpleDateFormat dt1 = new SimpleDateFormat("E MMM dd HH:mm:ss zzz yyyy");
+        SimpleDateFormat dt1 = new SimpleDateFormat("EEE MMM dd HH:mm:ss zzz yyyy", Locale.ENGLISH);
         SimpleDateFormat dt2 = new SimpleDateFormat("dd/MM/yyyy");
 
         nombre=findViewById(R.id.textView19);
@@ -30,12 +33,23 @@ public class ReservaActivity extends AppCompatActivity {
 
         Bundle bundle = getIntent().getExtras();
         nombre.setText(nombre.getText()+"  "+bundle.getString("Nombre"));
+        String fecha1String=bundle.getString("FechaE");
+        String fecha2String=bundle.getString("FechaS");
         try {
-            fechaE.setText(fechaE.getText()+"  "+dt2.format(dt1.parse(bundle.getString("FechaE"))));
-            fechaS.setText(fechaS.getText()+"  "+dt2.format(dt1.parse(bundle.getString("FechaS"))));
+
+            Date fecha1=dt1.parse(fecha1String);
+            Date fecha2=dt1.parse(fecha2String);
+            fecha1String=dt2.format(fecha1);
+            fecha2String=dt2.format(fecha2);
         } catch (ParseException e) {
-            e.printStackTrace();
+            fecha1String="error";
+            fecha2String="error";
         }
+        fechaE.setText(fechaE.getText()+"  "+fecha1String);
+        fechaS.setText(fechaS.getText()+"  "+fecha2String);
+
+
+
 
         des.setText(bundle.getString("Descripcion"));
 

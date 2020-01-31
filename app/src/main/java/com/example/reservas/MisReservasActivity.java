@@ -17,7 +17,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class MisReservasActivity extends AppCompatActivity {
-    List<Reserva> mDataset=new ArrayList<>();
+    List<Reserva> mDataset=new ArrayList<>();;
     private RecyclerView recyclerView;
     private RecyclerView.Adapter mAdapter;
     private RecyclerView.LayoutManager layoutManager;
@@ -27,6 +27,7 @@ public class MisReservasActivity extends AppCompatActivity {
         setContentView(R.layout.activity_mis_reservas);
 
         recyclerView=findViewById(R.id.res);
+        mAdapter = new MyAdapterReservas(mDataset);
         new ConexionReservas().execute();
 
         // use this setting to improve performance if you know that changes
@@ -118,7 +119,8 @@ public class MisReservasActivity extends AppCompatActivity {
             recyclerView.setLayoutManager(layoutManager);
 
             // specify an adapter (see also next example)
-            mAdapter = new MyAdapterReservas(mDataset);
+
+            mAdapter.notifyDataSetChanged();
             recyclerView.setAdapter(mAdapter);
 
             // Parar la animación del indicador

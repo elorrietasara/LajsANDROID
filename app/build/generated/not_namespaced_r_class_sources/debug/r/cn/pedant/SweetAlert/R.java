@@ -101,11 +101,11 @@ public final class R {
         public static final int error_circle = 0x7f070078;
         public static final int gray_button_background = 0x7f07007c;
         public static final int green_button_background = 0x7f07007d;
-        public static final int red_button_background = 0x7f07008f;
-        public static final int success_bow = 0x7f070097;
-        public static final int success_circle = 0x7f070098;
-        public static final int warning_circle = 0x7f07009c;
-        public static final int warning_sigh = 0x7f07009d;
+        public static final int red_button_background = 0x7f070090;
+        public static final int success_bow = 0x7f070098;
+        public static final int success_circle = 0x7f070099;
+        public static final int warning_circle = 0x7f07009e;
+        public static final int warning_sigh = 0x7f07009f;
     }
     public static final class id {
         private id() {}
@@ -126,11 +126,11 @@ public final class R {
         public static final int progress_dialog = 0x7f0800b2;
         public static final int success_frame = 0x7f0800df;
         public static final int success_tick = 0x7f0800e0;
-        public static final int title_text = 0x7f08010e;
-        public static final int warning_frame = 0x7f080114;
-        public static final int x = 0x7f08011b;
-        public static final int y = 0x7f08011c;
-        public static final int z = 0x7f08011d;
+        public static final int title_text = 0x7f080111;
+        public static final int warning_frame = 0x7f080117;
+        public static final int x = 0x7f08011e;
+        public static final int y = 0x7f08011f;
+        public static final int z = 0x7f080120;
     }
     public static final class layout {
         private layout() {}
