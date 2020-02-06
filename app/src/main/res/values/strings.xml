@@ -27,4 +27,30 @@
     <string name="telefono">Teléfono:</string>
     <string name="reservar">RESERVAR</string>
 
+
+    //DESDE AQUI LOGIN
+    <string name="contraseña">Contraseña</string>
+    <string name="usuario">Usuario</string>
+    <string name="registrar">REGISTRAR</string>
+    <string name="login">ACCEDER</string>
+    //DESDE REGISTRO
+
+    <string name="nombre">Nombre</string>
+    <string name="apellido">Apellido</string>
+    <string name="nac">Nacimineto</string>
+
+    //DESDE AdapterAloj
+    <string name="provinciaa">Provincia:</string>
+    <string name="direccion">Dirección:</string>
+
+    /DESDE Mimenu
+    <string name="misReserv">Mis Reservas</string>
+
+    //DESDE Activity reserva
+    <string name="detalles">DETALLES DE LA RESERVA</string>
+    <string name="aloj">Alojamiento:</string>
+    <string name="fechaE">Fecha de entrada:</string>
+    <string name="fechaS">Fecha de salida:</string>
+    <string name="sobre">Sobre el alojamiento:</string>
+
 </resources>

@@ -107,7 +107,7 @@
         android:layout_marginLeft="128dp"
         android:layout_marginBottom="16dp"
         android:background="@drawable/button"
-        android:text="Reservar"
+        android:text="@string/reservar"
         android:textColor="@android:color/black"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
@@ -130,7 +130,7 @@
         android:layout_marginStart="40dp"
         android:layout_marginLeft="40dp"
         android:layout_marginTop="8dp"
-        android:text="Provincia:"
+        android:text="@string/provinciaa"
         android:textStyle="bold"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView3" />
@@ -151,7 +151,7 @@
         android:layout_marginStart="40dp"
         android:layout_marginLeft="40dp"
         android:layout_marginTop="4dp"
-        android:text="Dirección:"
+        android:text="@string/direccion"
         android:textStyle="bold"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView10" />

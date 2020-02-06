@@ -14,5 +14,5 @@
         app:showAsAction="always" />
     <item
         android:id="@+id/reservas"
-        android:title="Mis Reservas" />
+        android:title="@string/misReserv" />
 </menu>

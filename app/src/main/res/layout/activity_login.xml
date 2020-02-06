@@ -14,7 +14,7 @@
         android:layout_marginLeft="88dp"
         android:layout_marginTop="68dp"
         android:ems="10"
-        android:hint="Usuario"
+        android:hint="@string/usuario"
         android:inputType="textPersonName"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/imageView3" />
@@ -27,7 +27,7 @@
         android:layout_marginLeft="88dp"
         android:layout_marginTop="28dp"
         android:ems="10"
-        android:hint="Contraseña"
+        android:hint="@string/contraseña"
         android:inputType="textPassword"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/editText3" />
@@ -41,7 +41,7 @@
         android:layout_marginBottom="48dp"
         android:background="@drawable/button"
         android:onClick="log"
-        android:text="LOGIN"
+        android:text="@string/login"
         app:layout_constraintBottom_toTopOf="@+id/button7"
         app:layout_constraintStart_toStartOf="parent" />
 
@@ -54,7 +54,7 @@
         android:layout_marginBottom="168dp"
         android:background="@drawable/button"
         android:onClick="registro"
-        android:text="registrar"
+        android:text="@string/registrar"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
 
