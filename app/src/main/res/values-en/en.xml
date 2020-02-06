@@ -28,26 +28,26 @@
     <string name="telefono">Phone:</string>
     <string name="reservar">Book</string>
 
-    //DESDE AQUI
+
     <string name="registrar">REGISTER</string>
     <string name="contraseña">Password</string>
     <string name="usuario">User</string>
     <string name="login">LOGIN</string>
 
-    //DESDE AQUI REGISTRO
+
 
     <string name="nombre">Name</string>
     <string name="apellido">Lastname</string>
     <string name="nac">Birth</string>
 
-    //DESDE AdapterAloj
+
     <string name="provinciaa">Province:</string>
     <string name="direccion">Direction:</string>
 
-    /DESDE Mimenu
+
     <string name="misReserv">My Bookings</string>
 
-    //DESDE Activity reserva
+
     <string name="detalles">BOOKING DETAILS</string>
     <string name="aloj">Accommodation:</string>
     <string name="fechaE">Entry date:</string>
